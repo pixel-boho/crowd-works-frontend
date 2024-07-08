@@ -1,0 +1,932 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">ngo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  VolunteerComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Feature/volunteer/volunteer.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-volunteer</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./volunteer.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./volunteer.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clicked" >clicked</a>
+                            </li>
+                            <li>
+                                <a href="#createVolunteerForm" >createVolunteerForm</a>
+                            </li>
+                            <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                <a href="#phoneerror" >phoneerror</a>
+                            </li>
+                            <li>
+                                <a href="#submitted" >submitted</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#checkphoneNumValidation" >checkphoneNumValidation</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#submitVolunteer" >submitVolunteer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f2" >f2</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, router: Router, apiService: <a href="../injectables/ApiService.html" target="_self">ApiService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>apiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkphoneNumValidation"></a>
+                    <span class="name">
+                        <span ><b>checkphoneNumValidation</b></span>
+                        <a href="#checkphoneNumValidation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>checkphoneNumValidation()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitVolunteer"></a>
+                    <span class="name">
+                        <span ><b>submitVolunteer</b></span>
+                        <a href="#submitVolunteer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitVolunteer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clicked"></a>
+                    <span class="name">
+                        <span ><b>clicked</b></span>
+                        <a href="#clicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createVolunteerForm"></a>
+                    <span class="name">
+                        <span ><b>createVolunteerForm</b></span>
+                        <a href="#createVolunteerForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="phoneerror"></a>
+                    <span class="name">
+                        <span ><b>phoneerror</b></span>
+                        <a href="#phoneerror"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitted"></a>
+                    <span class="name">
+                        <span ><b>submitted</b></span>
+                        <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f2"></a>
+                        <span class="name"><b>f2</b><a href="#f2"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f2()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/Feature/volunteer/volunteer.component.ts:34</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormControl, Validators } from &#x27;@angular/forms&#x27;;
+import { ApiService } from &#x27;src/app/core/service/api.service&#x27;;
+import { Router,ActivatedRoute } from &#x27;@angular/router&#x27;;
+declare var $:any
+
+@Component({
+  selector: &#x27;app-volunteer&#x27;,
+  templateUrl: &#x27;./volunteer.component.html&#x27;,
+  styleUrls: [&#x27;./volunteer.component.css&#x27;]
+})
+export class VolunteerComponent implements OnInit {
+  createVolunteerForm: any;
+  submitted: boolean;
+  clicked: boolean;
+  loading: boolean;
+  phoneerror: boolean;
+
+  constructor(private fb: FormBuilder,private router: Router,private apiService: ApiService, ) {
+    this.createVolunteerForm &#x3D; this.fb.group({
+      username: [&#x27;&#x27;,[Validators.required]],
+      phone_number:[&#x27;&#x27;, [Validators.required,Validators.pattern(&quot;^[0-9]*$&quot;)]] ,
+      address: [&#x27;&#x27;,[Validators.required]],
+      email: [&#x27;&#x27;,[Validators.required,Validators.pattern(&quot;[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$&quot;)]],
+    });
+  }
+
+  ngOnInit(): void {
+    setTimeout(() &#x3D;&gt; {
+      // $(&#x27;#alert-modal&#x27;).modal(&#x27;show&#x27;);
+
+    }, 5000);
+  }
+  get f2() {
+    return this.createVolunteerForm.controls;
+  }
+  checkphoneNumValidation(){
+    if(this.createVolunteerForm.value.phone_number.length &lt; 8){
+      this.phoneerror &#x3D; true;
+    }
+    else{
+      this.phoneerror &#x3D; false;
+    }
+  }
+  submitVolunteer(){
+    this.submitted &#x3D; true;
+    this.clicked &#x3D; true;
+    const formData &#x3D; new FormData();
+    this.checkphoneNumValidation();
+    if (this.createVolunteerForm.invalid) {
+        this.clicked &#x3D; false;
+        return;
+    }
+    let submitFormVal &#x3D;  this.createVolunteerForm.value
+
+    formData.append(&#x27;name&#x27;, submitFormVal.username);
+    formData.append(&#x27;email&#x27;, submitFormVal.email);
+    formData.append(&#x27;phone_number&#x27;, submitFormVal.phone_number);
+    formData.append(&#x27;address&#x27;, submitFormVal.address);
+    if(this.createVolunteerForm.invalid &#x3D;&#x3D;&#x3D; false){
+      this.loading &#x3D; true;
+    }
+    this.apiService.registerVolunteer(formData).subscribe((res:any)&#x3D;&gt;{
+       if (res.success &#x3D;&#x3D; 1) {
+         this.createVolunteerForm.reset();
+         this.submitted &#x3D; false;
+         this.loading &#x3D; false;
+         this.clicked &#x3D; false;
+         $(&#x27;#successvolunteerModal&#x27;).modal(&#x27;show&#x27;);
+       } else {
+
+       }
+     }, error &#x3D;&gt; {
+     })
+    }
+
+  }
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;section-scheme&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div class&#x3D;&quot;row align-items-center&quot;&gt;
+			&lt;div class&#x3D;&quot;col-md-8 col-sm-12 col-12&quot;&gt;
+				&lt;div class&#x3D;&quot;page-lbar&quot;&gt;
+					&lt;h2 class&#x3D;&quot;left-header navy-blue&quot;&gt;You Become a Volunteer&lt;/h2&gt;
+					&lt;li class&#x3D;&quot;left-hd-list cursr-none&quot;&gt;&lt;/li&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;page-lbar-p cursr-none&quot;&gt;
+					&lt;p class&#x3D;&quot;sm-txt&quot;  &gt;“If our hopes of building a better and safer world are to become more than wishful thinking, we will need the engagement of volunteers more than ever.” — Kofi Annan&lt;/p&gt;
+				&lt;/div&gt;
+
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;clearfix&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+				&lt;div class&#x3D;&quot;volunter-form&quot;&gt;
+					&lt;div class&#x3D;&quot;page-lbar&quot;&gt;
+						&lt;!-- &lt;h2 class&#x3D;&quot;left-header txt-white&quot;&gt;You become a volunteer&lt;/h2&gt; --&gt;
+						&lt;li class&#x3D;&quot;left-hd-list txt-white&quot;&gt;Fill your details&lt;/li&gt;
+					&lt;/div&gt;
+          &lt;form [formGroup]&#x3D;&quot;createVolunteerForm&quot;&gt;
+
+					&lt;div class&#x3D;&quot;row&quot;&gt;
+						&lt;div class&#x3D;&quot;col-md-6 col-lg-6 col-sm-12 col-12&quot;&gt;
+							&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; class&#x3D;&quot;vtr-dt-box mb-20 form-control inp-backcolor&quot; formControlName&#x3D;&quot;username&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f2.username.errors }&quot; placeholder&#x3D;&quot;Your Name*&quot;&gt;
+              &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f2.username.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                &lt;div *ngIf&#x3D;&quot;f2.username.errors.required&quot;&gt;This field is required&lt;/div&gt;
+
+                &lt;/div&gt;
+						&lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-md-6 col-lg-6 col-sm-12 col-12&quot;&gt;
+							&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; class&#x3D;&quot;vtr-dt-box mb-20 form-control inp-backcolor&quot; maxlength&#x3D;&quot;16&quot; minlength&#x3D;&quot;8&quot; formControlName&#x3D;&quot;phone_number&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f2.phone_number.errors }&quot; placeholder&#x3D;&quot;Phone Number*&quot;&gt;
+              &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f2.phone_number.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                &lt;div *ngIf&#x3D;&quot;f2.phone_number.errors.required&quot;&gt;This field is required&lt;/div&gt;
+                &lt;div *ngIf&#x3D;&quot;(f2.phone_number.errors.pattern || phoneerror &#x3D;&#x3D;&#x3D; true) &amp;&amp; this.createVolunteerForm.value.phone_number &quot;&gt;Please, Enter valid Phone Number.&lt;/div&gt;
+
+
+                &lt;/div&gt;
+						&lt;/div&gt;
+						&lt;div class&#x3D;&quot;mt-4 col-md-6 col-lg-6 col-sm-12 col-12 &quot;&gt;
+							&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; class&#x3D;&quot;vtr-dt-box mb-20 form-control inp-backcolor&quot; formControlName&#x3D;&quot;address&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f2.address.errors }&quot; placeholder&#x3D;&quot;Address*&quot;&gt;
+              &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f2.address.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                &lt;div *ngIf&#x3D;&quot;f2.address.errors.required&quot;&gt;This field is required&lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+              &lt;div class&#x3D;&quot; mt-4 col-md-6 col-lg-6 col-sm-12 col-12&quot;&gt;
+
+							&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;&quot; class&#x3D;&quot;vtr-dt-box mb-20 form-control inp-backcolor&quot; [email]&#x3D;&quot;true&quot;  formControlName&#x3D;&quot;email&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f2.email.errors }&quot; placeholder&#x3D;&quot;Email*&quot;&gt;
+              &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f2.email.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                &lt;div *ngIf&#x3D;&quot;f2.email.errors.required&quot;&gt;This field is required&lt;/div&gt;
+                &lt;div *ngIf&#x3D;&quot;f2.email.errors.pattern&quot;&gt;Please, Enter valid email.&lt;/div&gt;
+
+
+                &lt;/div&gt;
+              &lt;button class&#x3D;&quot;btn-wd-100 mt-4&quot; type&#x3D;&quot;sumit&quot; (click)&#x3D;&quot;submitVolunteer()&quot;&gt;&lt;i class&#x3D;&quot;fa&quot; [ngClass]&#x3D;&quot;{&#x27;fa-spin fa-spinner&#x27;: loading}&quot;&gt;&lt;/i&gt; Submit&lt;/button&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+&lt;/form&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;volunteer-img&quot;&gt;&lt;img src&#x3D;&quot;assets//images/icons/volunteer.png&quot; class&#x3D;&quot;img-fluid&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;div class&#x3D;&quot;modal fade payed-modal&quot; id&#x3D;&quot;successvolunteerModal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered&quot; role&#x3D;&quot;document&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-content&quot; style&#x3D;&quot;background-color: white;&quot;&gt;
+      &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-12 col-lg-12&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-12 col-md-12&quot;&gt;
+              &lt;div class&#x3D;&quot;payd-msg&quot;&gt;
+                &lt;p class&#x3D;&quot;mt-4&quot; style&#x3D;&quot;color: black;text-transform: none;&quot;&gt;
+                  Your application submitted successfully. Our representative will contact you soon.&lt;/p&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                  &lt;div class&#x3D;&quot;col-md-2 col-12&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-4 col-12&quot; style&#x3D;&quot; margin: 0 auto;&quot;&gt;
+                    &lt;button class&#x3D;&quot;f-btn-border&quot; type&#x3D;&quot;submit&quot; data-dismiss&#x3D;&quot;modal&quot; style&#x3D;&quot;background-color: #32374a;&quot; &gt;OK&lt;/button&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class&#x3D;&quot;col-md-2 col-12&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./volunteer.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.form-control:focus{border-color: #dc3545;;  box-shadow: none; -webkit-box-shadow: none;}
+.has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+
+.inp-backcolor{
+  background-color: transparent;
+  color: white;
+
+}
+::ng-deep .form-control {
+  border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="section-scheme">	<div class="container">		<div class="row align-items-center">			<div class="col-md-8 col-sm-12 col-12">				<div class="page-lbar">					<h2 class="left-header navy-blue">You Become a Volunteer</h2>					<li class="left-hd-list cursr-none"></li>				</div>				<div class="page-lbar-p cursr-none">					<p class="sm-txt"  >“If our hopes of building a better and safer world are to become more than wishful thinking, we will need the engagement of volunteers more than ever.” — Kofi Annan</p>				</div>			</div>			<div class="clearfix"></div>		</div>		<div class="row">			<div class="col-md-12">				<div class="volunter-form">					<div class="page-lbar">						<!-- <h2 class="left-header txt-white">You become a volunteer</h2> -->						<li class="left-hd-list txt-white">Fill your details</li>					</div>          <form [formGroup]="createVolunteerForm">					<div class="row">						<div class="col-md-6 col-lg-6 col-sm-12 col-12">							<input type="text" name="" class="vtr-dt-box mb-20 form-control inp-backcolor" formControlName="username" [ngClass]="{ \'is-invalid\': submitted && f2.username.errors }" placeholder="Your Name*">              <div *ngIf="submitted && f2.username.errors" class="invalid-feedback">                <div *ngIf="f2.username.errors.required">This field is required</div>                </div>						</div>            <div class="col-md-6 col-lg-6 col-sm-12 col-12">							<input type="text" name="" class="vtr-dt-box mb-20 form-control inp-backcolor" maxlength="16" minlength="8" formControlName="phone_number" [ngClass]="{ \'is-invalid\': submitted && f2.phone_number.errors }" placeholder="Phone Number*">              <div *ngIf="submitted && f2.phone_number.errors" class="invalid-feedback">                <div *ngIf="f2.phone_number.errors.required">This field is required</div>                <div *ngIf="(f2.phone_number.errors.pattern || phoneerror === true) && this.createVolunteerForm.value.phone_number ">Please, Enter valid Phone Number.</div>                </div>						</div>						<div class="mt-4 col-md-6 col-lg-6 col-sm-12 col-12 ">							<input type="text" name="" class="vtr-dt-box mb-20 form-control inp-backcolor" formControlName="address" [ngClass]="{ \'is-invalid\': submitted && f2.address.errors }" placeholder="Address*">              <div *ngIf="submitted && f2.address.errors" class="invalid-feedback">                <div *ngIf="f2.address.errors.required">This field is required</div>                </div>            </div>              <div class=" mt-4 col-md-6 col-lg-6 col-sm-12 col-12">							<input type="text" name="" class="vtr-dt-box mb-20 form-control inp-backcolor" [email]="true"  formControlName="email" [ngClass]="{ \'is-invalid\': submitted && f2.email.errors }" placeholder="Email*">              <div *ngIf="submitted && f2.email.errors" class="invalid-feedback">                <div *ngIf="f2.email.errors.required">This field is required</div>                <div *ngIf="f2.email.errors.pattern">Please, Enter valid email.</div>                </div>              <button class="btn-wd-100 mt-4" type="sumit" (click)="submitVolunteer()"><i class="fa" [ngClass]="{\'fa-spin fa-spinner\': loading}"></i> Submit</button>						</div>					</div></form>				</div>				<div class="volunteer-img"><img src="assets//images/icons/volunteer.png" class="img-fluid"></div>			</div>		</div>	</div></section><div class="modal fade payed-modal" id="successvolunteerModal" tabindex="-1" role="dialog" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered" role="document">    <div class="modal-content" style="background-color: white;">      <div class="modal-body">        <div class="col-lg-12 col-lg-12">          <div class="row">            <div class="col-lg-12 col-md-12">              <div class="payd-msg">                <p class="mt-4" style="color: black;text-transform: none;">                  Your application submitted successfully. Our representative will contact you soon.</p>                <div class="row">                  <div class="col-md-2 col-12"></div>                  <div class="col-md-4 col-12" style=" margin: 0 auto;">                    <button class="f-btn-border" type="submit" data-dismiss="modal" style="background-color: #32374a;" >OK</button>                  </div>                  <div class="col-md-2 col-12"></div>                </div>            </div>          </div>        </div>      </div>    </div>  </div></div></div></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AmlPolicyComponent', 'selector': 'app-aml-policy'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'app-campaign'},{'name': 'CancellationPolicyComponent', 'selector': 'app-cancellation-policy'},{'name': 'CheckoutComponent', 'selector': 'paytm-checkout'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DemoComponent', 'selector': 'app-demo'},{'name': 'DonateNowComponent', 'selector': 'app-donate-now'},{'name': 'DonateUserComponent', 'selector': 'app-donate-user'},{'name': 'EditFundraiserComponent', 'selector': 'app-edit-fundraiser'},{'name': 'EditLoanComponent', 'selector': 'app-edit-loan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FundRaiserComponent', 'selector': 'app-fund-raiser'},{'name': 'FundRaiserDetailComponent', 'selector': 'app-fund-raiser-detail'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HowItWorksComponent', 'selector': 'app-how-it-works'},{'name': 'LendComponent', 'selector': 'app-lend'},{'name': 'LoanDetailsComponent', 'selector': 'app-loan-details'},{'name': 'OurCampaignsComponent', 'selector': 'app-our-campaigns'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaytmComponent', 'selector': 'app-paytm'},{'name': 'PaytmPaymentComponent', 'selector': 'app-paytm-payment'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SearchListComponent', 'selector': 'app-search-list'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'StartFundraiserComponent', 'selector': 'app-start-fundraiser'},{'name': 'StatisticsComponent', 'selector': 'app-statistics'},{'name': 'TermsAndConditionsComponent', 'selector': 'app-terms-and-conditions'},{'name': 'VolunteerComponent', 'selector': 'app-volunteer'},{'name': 'WithdrawStartFundraiserComponent', 'selector': 'app-withdraw-start-fundraiser'}];
+    var DIRECTIVES = [{'name': 'DragDirective', 'selector': '[appDrag]'}];
+    var ACTUAL_COMPONENT = {'name': 'VolunteerComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'VolunteerComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

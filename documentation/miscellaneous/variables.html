@@ -1,0 +1,1535 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">ngo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#$" title="src/app/Feature/about-us/about-us.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../about-us.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/aml-policy/aml-policy.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../aml-policy.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/campaign/campaign.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../campaign.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/cancellation-policy/cancellation-policy.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../cancellation-policy.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/contact-us/contact-us.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../contact-us.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/donate-now/donate-now.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../donate-now.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/edit-fundraiser/edit-fundraiser.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../edit-fundraiser.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/edit-loan/edit-loan.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../edit-loan.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/fund-raiser/fund-raiser.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../fund-raiser.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/fund-raiser-detail/fund-raiser-detail.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../fund-raiser-detail.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/home/home.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../home.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/how-it-works/how-it-works.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../how-it-works.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/lend/lend.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../lend.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/loan-details/loan-details.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../loan-details.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/our-campaigns/our-campaigns.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../our-campaigns.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/privacy-policy/privacy-policy.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../privacy-policy.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/profile/profile.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../profile.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/search-list/search-list.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../search-list.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/start-fundraiser/start-fundraiser.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../start-fundraiser.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/terms-and-conditions/terms-and-conditions.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../terms-and-conditions.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/volunteer/volunteer.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../volunteer.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/Feature/withdraw-start-fundraiser/withdraw-start-fundraiser.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../withdraw-start-fundraiser.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/core/layout/footer/footer.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../footer.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#$" title="src/app/core/layout/header/header.component.ts" ><b>$</b>&nbsp;&nbsp;&nbsp;(src/.../header.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CONSTANTS" title="projects/angular-checkout-js/src/lib/constants/index.ts" ><b>CONSTANTS</b>&nbsp;&nbsp;&nbsp;(projects/.../index.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#context" title="src/test.ts" ><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#context" title="projects/angular-checkout-js/src/test.ts" ><b>context</b>&nbsp;&nbsp;&nbsp;(projects/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#google" title="src/app/Feature/home/home.component.ts" ><b>google</b>&nbsp;&nbsp;&nbsp;(src/.../home.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#google" title="src/app/core/layout/header/header.component.ts" ><b>google</b>&nbsp;&nbsp;&nbsp;(src/.../header.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#headers_object" title="src/app/core/service/api.service.ts" ><b>headers_object</b>&nbsp;&nbsp;&nbsp;(src/.../api.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#httpOptions" title="src/app/core/service/api.service.ts" ><b>httpOptions</b>&nbsp;&nbsp;&nbsp;(src/.../api.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loginToken" title="src/app/core/service/api.service.ts" ><b>loginToken</b>&nbsp;&nbsp;&nbsp;(src/.../api.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#loginToken" title="src/app/core/service/auth.service.ts" ><b>loginToken</b>&nbsp;&nbsp;&nbsp;(src/.../auth.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/about-us/about-us.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../about-us.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/campaign/campaign.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../campaign.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/fund-raiser/fund-raiser.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../fund-raiser.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/fund-raiser-detail/fund-raiser-detail.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../fund-raiser-detail.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/home/home.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../home.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/how-it-works/how-it-works.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../how-it-works.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/lend/lend.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../lend.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/loan-details/loan-details.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../loan-details.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/Feature/our-campaigns/our-campaigns.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../our-campaigns.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Razorpay" title="src/app/core/layout/header/header.component.ts" ><b>Razorpay</b>&nbsp;&nbsp;&nbsp;(src/.../header.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#require" title="src/test.ts" ><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#require" title="projects/angular-checkout-js/src/test.ts" ><b>require</b>&nbsp;&nbsp;&nbsp;(projects/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#userid" title="src/app/core/service/api.service.ts" ><b>userid</b>&nbsp;&nbsp;&nbsp;(src/.../api.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#window" title="src/app/core/layout/header/header.component.ts" ><b>window</b>&nbsp;&nbsp;&nbsp;(src/.../header.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WINDOW_TOKEN" title="projects/angular-checkout-js/src/lib/services/window.service.ts" ><b>WINDOW_TOKEN</b>&nbsp;&nbsp;&nbsp;(projects/.../window.service.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/Feature/about-us/about-us.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/aml-policy/aml-policy.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/campaign/campaign.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/cancellation-policy/cancellation-policy.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/contact-us/contact-us.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/donate-now/donate-now.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/edit-fundraiser/edit-fundraiser.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/edit-loan/edit-loan.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/fund-raiser/fund-raiser.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/fund-raiser-detail/fund-raiser-detail.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/home/home.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="google"></a>
+                    <span class="name">
+                        <span ><b>google</b></span>
+                        <a href="#google"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/how-it-works/how-it-works.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/lend/lend.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/loan-details/loan-details.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/our-campaigns/our-campaigns.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/privacy-policy/privacy-policy.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/profile/profile.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/search-list/search-list.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/start-fundraiser/start-fundraiser.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/terms-and-conditions/terms-and-conditions.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/volunteer/volunteer.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/Feature/withdraw-start-fundraiser/withdraw-start-fundraiser.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/layout/footer/footer.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/layout/header/header.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="$"></a>
+                    <span class="name">
+                        <span ><b>$</b></span>
+                        <a href="#$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="google"></a>
+                    <span class="name">
+                        <span ><b>google</b></span>
+                        <a href="#google"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Razorpay"></a>
+                    <span class="name">
+                        <span ><b>Razorpay</b></span>
+                        <a href="#Razorpay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window"></a>
+                    <span class="name">
+                        <span ><b>window</b></span>
+                        <a href="#window"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/angular-checkout-js/src/lib/constants/index.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CONSTANTS"></a>
+                    <span class="name">
+                        <span ><b>CONSTANTS</b></span>
+                        <a href="#CONSTANTS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    PROJECT_NAME: &#x27;Paytm Blink Checkout JS&#x27;,
+    ENV: {
+        PROD: &#x27;PROD&#x27;,
+        STAGE: &#x27;STAGE&#x27;
+    },
+    HOSTS: {
+        PROD: &#x27;https://securegw.paytm.in&#x27;,
+        STAGE: &#x27;https://securegw-stage.paytm.in&#x27;
+    },
+    LINKS: {
+        CHECKOUT_JS_URL: &#x27;/merchantpgpui/checkoutjs/merchants/&#x27;
+    },
+    ERRORS: {
+        INIT : &#x27;An error during initialization!&#x27;,
+        INVOKE : &#x27;An error during invoking!&#x27;,
+        MERCHANT_ID_NOT_FOUND: &#x27;Please provide merchant id!&#x27;,
+        CHECKOUT_NOT_AVAILABLE: &#x27;Checkout JS library not found. Please make sure you have included checkout js!&#x27;,
+        INVALID_CHECKOUT_JS_INSTANCE: &#x27;Invalid instance provided!&#x27;
+    },
+    IDS: {
+        CHECKOUT_ELEMENT: &#x27;checkout-wrapper-&#x27;
+    }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/test.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="context"></a>
+                    <span class="name">
+                        <span ><b>context</b></span>
+                        <a href="#context"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="require"></a>
+                    <span class="name">
+                        <span ><b>require</b></span>
+                        <a href="#require"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/angular-checkout-js/src/test.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="context"></a>
+                    <span class="name">
+                        <span ><b>context</b></span>
+                        <a href="#context"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="require"></a>
+                    <span class="name">
+                        <span ><b>require</b></span>
+                        <a href="#require"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: true
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: false
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/service/api.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="headers_object"></a>
+                    <span class="name">
+                        <span ><b>headers_object</b></span>
+                        <a href="#headers_object"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new HttpHeaders().set(
+  &#x27;Authorization&#x27;,
+  &#x27;Bearer &#x27; + loginToken
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="httpOptions"></a>
+                    <span class="name">
+                        <span ><b>httpOptions</b></span>
+                        <a href="#httpOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  headers: new HttpHeaders({
+    Authorization: &#x27;Bearer &#x27; + loginToken,
+  }),
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginToken"></a>
+                    <span class="name">
+                        <span ><b>loginToken</b></span>
+                        <a href="#loginToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>localStorage.getItem(&#x27;LoginToken&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userid"></a>
+                    <span class="name">
+                        <span ><b>userid</b></span>
+                        <a href="#userid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>localStorage.getItem(&#x27;user_id&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/service/auth.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginToken"></a>
+                    <span class="name">
+                        <span ><b>loginToken</b></span>
+                        <a href="#loginToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>localStorage.getItem(&quot;LoginToken&quot;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/angular-checkout-js/src/lib/services/window.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WINDOW_TOKEN"></a>
+                    <span class="name">
+                        <span ><b>WINDOW_TOKEN</b></span>
+                        <a href="#WINDOW_TOKEN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new InjectionToken&lt;Window&gt;(&#x27;Window&#x27;, {
+    providedIn: &#x27;root&#x27;,
+    factory: () &#x3D;&gt; window as Window
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

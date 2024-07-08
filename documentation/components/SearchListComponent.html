@@ -1,0 +1,2968 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">ngo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SearchListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Feature/search-list/search-list.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-search-list</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./search-list.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./search-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bannerList" >bannerList</a>
+                            </li>
+                            <li>
+                                <a href="#baseUrl" >baseUrl</a>
+                            </li>
+                            <li>
+                                <a href="#campaign_id" >campaign_id</a>
+                            </li>
+                            <li>
+                                <a href="#campaignList" >campaignList</a>
+                            </li>
+                            <li>
+                                <a href="#category_id" >category_id</a>
+                            </li>
+                            <li>
+                                <a href="#clicked" >clicked</a>
+                            </li>
+                            <li>
+                                <a href="#donationAmount" >donationAmount</a>
+                            </li>
+                            <li>
+                                <a href="#eightygmForm" >eightygmForm</a>
+                            </li>
+                            <li>
+                                <a href="#firstFormGroup" >firstFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#fundraiserId" >fundraiserId</a>
+                            </li>
+                            <li>
+                                <a href="#fundRaiserlength" >fundRaiserlength</a>
+                            </li>
+                            <li>
+                                <a href="#fundRaiserList" >fundRaiserList</a>
+                            </li>
+                            <li>
+                                <a href="#infoStatus" >infoStatus</a>
+                            </li>
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                            <li>
+                                <a href="#pageNumber" >pageNumber</a>
+                            </li>
+                            <li>
+                                <a href="#pagination" >pagination</a>
+                            </li>
+                            <li>
+                                <a href="#searchinput" >searchinput</a>
+                            </li>
+                            <li>
+                                <a href="#secondFormGroup" >secondFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#show_donor_information" >show_donor_information</a>
+                            </li>
+                            <li>
+                                <a href="#sorting" >sorting</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Private</span>
+                                <a href="#stepper" >stepper</a>
+                            </li>
+                            <li>
+                                <a href="#submitted" >submitted</a>
+                            </li>
+                            <li>
+                                <a href="#submittedgmForm" >submittedgmForm</a>
+                            </li>
+                            <li>
+                                <a href="#totalCount" >totalCount</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#close80gForm" >close80gForm</a>
+                            </li>
+                            <li>
+                                <a href="#closeDonateModal" >closeDonateModal</a>
+                            </li>
+                            <li>
+                                <a href="#closeModal" >closeModal</a>
+                            </li>
+                            <li>
+                                <a href="#donAmount" >donAmount</a>
+                            </li>
+                            <li>
+                                <a href="#donatenowModal" >donatenowModal</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserByCampaign" >getFundraiserByCampaign</a>
+                            </li>
+                            <li>
+                                <a href="#getFundraiserForBanners" >getFundraiserForBanners</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#open80gForm" >open80gForm</a>
+                            </li>
+                            <li>
+                                <a href="#showinfo" >showinfo</a>
+                            </li>
+                            <li>
+                                <a href="#submit80gForm" >submit80gForm</a>
+                            </li>
+                            <li>
+                                <a href="#submitDonationDetails" >submitDonationDetails</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f2" >f2</a>
+                                </li>
+                                <li>
+                                    <a href="#f4" >f4</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, route: ActivatedRoute, router: Router, apiService: <a href="../injectables/ApiService.html" target="_self">ApiService</a>, _formBuilder: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>apiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close80gForm"></a>
+                    <span class="name">
+                        <span ><b>close80gForm</b></span>
+                        <a href="#close80gForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>close80gForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="124"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:124</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeDonateModal"></a>
+                    <span class="name">
+                        <span ><b>closeDonateModal</b></span>
+                        <a href="#closeDonateModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeDonateModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:171</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeModal"></a>
+                    <span class="name">
+                        <span ><b>closeModal</b></span>
+                        <a href="#closeModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donAmount"></a>
+                    <span class="name">
+                        <span ><b>donAmount</b></span>
+                        <a href="#donAmount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>donAmount(e)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>e</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donatenowModal"></a>
+                    <span class="name">
+                        <span ><b>donatenowModal</b></span>
+                        <a href="#donatenowModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>donatenowModal(id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="98"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserByCampaign"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserByCampaign</b></span>
+                        <a href="#getFundraiserByCampaign"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserByCampaign()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundraiserForBanners"></a>
+                    <span class="name">
+                        <span ><b>getFundraiserForBanners</b></span>
+                        <a href="#getFundraiserForBanners"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getFundraiserForBanners()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open80gForm"></a>
+                    <span class="name">
+                        <span ><b>open80gForm</b></span>
+                        <a href="#open80gForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open80gForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="160"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showinfo"></a>
+                    <span class="name">
+                        <span ><b>showinfo</b></span>
+                        <a href="#showinfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showinfo(event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submit80gForm"></a>
+                    <span class="name">
+                        <span ><b>submit80gForm</b></span>
+                        <a href="#submit80gForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submit80gForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="164"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:164</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitDonationDetails"></a>
+                    <span class="name">
+                        <span ><b>submitDonationDetails</b></span>
+                        <a href="#submitDonationDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitDonationDetails()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bannerList"></a>
+                    <span class="name">
+                        <span ><b>bannerList</b></span>
+                        <a href="#bannerList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="baseUrl"></a>
+                    <span class="name">
+                        <span ><b>baseUrl</b></span>
+                        <a href="#baseUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="campaign_id"></a>
+                    <span class="name">
+                        <span ><b>campaign_id</b></span>
+                        <a href="#campaign_id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="campaignList"></a>
+                    <span class="name">
+                        <span ><b>campaignList</b></span>
+                        <a href="#campaignList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="category_id"></a>
+                    <span class="name">
+                        <span ><b>category_id</b></span>
+                        <a href="#category_id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clicked"></a>
+                    <span class="name">
+                        <span ><b>clicked</b></span>
+                        <a href="#clicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donationAmount"></a>
+                    <span class="name">
+                        <span ><b>donationAmount</b></span>
+                        <a href="#donationAmount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eightygmForm"></a>
+                    <span class="name">
+                        <span ><b>eightygmForm</b></span>
+                        <a href="#eightygmForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="firstFormGroup"></a>
+                    <span class="name">
+                        <span ><b>firstFormGroup</b></span>
+                        <a href="#firstFormGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundraiserId"></a>
+                    <span class="name">
+                        <span ><b>fundraiserId</b></span>
+                        <a href="#fundraiserId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundRaiserlength"></a>
+                    <span class="name">
+                        <span ><b>fundRaiserlength</b></span>
+                        <a href="#fundRaiserlength"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundRaiserList"></a>
+                    <span class="name">
+                        <span ><b>fundRaiserList</b></span>
+                        <a href="#fundRaiserList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="infoStatus"></a>
+                    <span class="name">
+                        <span ><b>infoStatus</b></span>
+                        <a href="#infoStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;ngx sharebuttons&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pageNumber"></a>
+                    <span class="name">
+                        <span ><b>pageNumber</b></span>
+                        <a href="#pageNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pagination"></a>
+                    <span class="name">
+                        <span ><b>pagination</b></span>
+                        <a href="#pagination"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchinput"></a>
+                    <span class="name">
+                        <span ><b>searchinput</b></span>
+                        <a href="#searchinput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="secondFormGroup"></a>
+                    <span class="name">
+                        <span ><b>secondFormGroup</b></span>
+                        <a href="#secondFormGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="show_donor_information"></a>
+                    <span class="name">
+                        <span ><b>show_donor_information</b></span>
+                        <a href="#show_donor_information"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sorting"></a>
+                    <span class="name">
+                        <span ><b>sorting</b></span>
+                        <a href="#sorting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stepper"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Private</span>
+                        <span ><b>stepper</b></span>
+                        <a href="#stepper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatStepper</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;stepper&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitted"></a>
+                    <span class="name">
+                        <span ><b>submitted</b></span>
+                        <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submittedgmForm"></a>
+                    <span class="name">
+                        <span ><b>submittedgmForm</b></span>
+                        <a href="#submittedgmForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="totalCount"></a>
+                    <span class="name">
+                        <span ><b>totalCount</b></span>
+                        <a href="#totalCount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f2"></a>
+                        <span class="name"><b>f2</b><a href="#f2"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f2()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:104</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f4"></a>
+                        <span class="name"><b>f4</b><a href="#f4"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f4()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="157" class="link-to-prism">src/app/Feature/search-list/search-list.component.ts:157</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiService } from &#x27;./../../core/service/api.service&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import * as _ from &#x27;lodash&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { MatStepper } from &#x27;@angular/material/stepper&#x27;;
+
+declare var $:any;
+
+@Component({
+  selector: &#x27;app-search-list&#x27;,
+  templateUrl: &#x27;./search-list.component.html&#x27;,
+  styleUrls: [&#x27;./search-list.component.css&#x27;]
+})
+export class SearchListComponent implements OnInit {
+
+  @ViewChild(&#x27;stepper&#x27;) private stepper: MatStepper;
+
+  campaignList: any;
+  baseUrl: any;
+  name &#x3D; &#x27;ngx sharebuttons&#x27;;
+  fundRaiserList: any;
+  bannerList: any;
+  pageNumber: any;
+  pagination: any;
+  totalCount: any;
+  infoStatus: boolean;
+  show_donor_information: any;
+  donationAmount: any;
+  fundraiserId: any;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  clicked: boolean;
+  submitted: boolean;
+  eightygmForm:FormGroup;
+  submittedgmForm: boolean;
+  fundRaiserlength: any;
+  campaign_id: any;
+  searchinput: string;
+  sorting: string;
+  category_id: any;
+  constructor(private fb: FormBuilder,private route:ActivatedRoute,private router: Router,private apiService: ApiService,private _formBuilder: FormBuilder ) {
+    this.campaign_id &#x3D; this.route.snapshot.paramMap.get(&#x27;id&#x27;);
+     this.infoStatus &#x3D; false;
+    this.show_donor_information &#x3D; 0;
+    this.submitted &#x3D; false;
+    this.submittedgmForm &#x3D; false;
+    this.firstFormGroup &#x3D; this._formBuilder.group({
+      amount: [&#x27;&#x27;,[Validators.required]],
+    });
+    this.secondFormGroup &#x3D; this._formBuilder.group({
+      name: [&#x27;&#x27;,[Validators.required]],
+      email: [&#x27;&#x27;, [Validators.required,Validators.pattern(&quot;[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$&quot;)]] ,
+      show_donor_information: [&#x27;&#x27;],
+
+    });
+    this.eightygmForm &#x3D; this._formBuilder.group({
+      pancard_no: [&#x27;&#x27;,[Validators.required]],
+      name: [&#x27;&#x27;, [Validators.required]] ,
+      phone_number: [&#x27;&#x27;, [Validators.required]] ,
+    });
+  }
+
+  ngOnInit(): void {
+    this.getFundraiserForBanners();
+    this.getFundraiserByCampaign();
+    this.donationAmount &#x3D; 1000;
+
+  }
+
+  getFundraiserByCampaign(){
+    this.searchinput &#x3D; &#x27;&#x27;;
+       this.sorting &#x3D; &#x27;&#x27;;
+       this.category_id &#x3D; this.campaign_id;
+     this.apiService.browseFundRaiser(this.sorting,this.searchinput,this.category_id).subscribe((res:any)&#x3D;&gt;{
+       this.fundRaiserList &#x3D; res[&#x27;list&#x27;];
+       this.baseUrl &#x3D; res.baseUrl;
+       this.pageNumber &#x3D;  res.page;
+       this.totalCount &#x3D; res.totalCount;
+       this.fundRaiserlength &#x3D; this.fundRaiserList.length;
+       if(res.succcess &#x3D; 1){
+       }
+   })
+   }
+getFundraiserForBanners(){
+  this.apiService.getFundraiserForBanners().subscribe((res:any)&#x3D;&gt;{
+    this.campaignList &#x3D; res[&#x27;list&#x27;];
+    this.baseUrl &#x3D; res.baseUrl;
+    var sortList &#x3D;this.campaignList.sort(function(a, b){
+      var aa &#x3D; new Date(a.closing_date),
+          bb &#x3D; new Date(b.closing_date);
+      return aa &lt; bb ? -1 : (aa &gt; bb ? 1 : 0);
+      });
+      this.bannerList &#x3D; _.slice(sortList, 0,3);
+})
+}
+
+donatenowModal(id){
+  $(&#x27;#wizard-up-modal&#x27;).modal(&#x27;show&#x27;);
+  this.stepper.selectedIndex &#x3D; 0;
+  this.fundraiserId &#x3D; id;
+  this.submittedgmForm &#x3D; false;
+}
+get f2() {
+  return this.secondFormGroup.controls;
+}
+showinfo(event){
+this.infoStatus &#x3D; event.target.checked;
+if(this.infoStatus &#x3D;&#x3D;&#x3D; true){
+  this.show_donor_information &#x3D; 1;
+}
+else{
+  this.show_donor_information &#x3D; 0;
+
+}
+}
+donAmount(e){
+  this.donationAmount &#x3D; e.target.outerText;
+}
+closeModal(){
+  $(&#x27;#wizard-up-modal&#x27;).modal(&#x27;hide&#x27;);
+  $(&#x27;#closeDonateModal&#x27;).modal(&#x27;show&#x27;);
+}
+close80gForm(){
+  $(&#x27;#80gmFormmodal&#x27;).modal(&#x27;hide&#x27;);
+  $(&#x27;#closeDonateModal&#x27;).modal(&#x27;show&#x27;);
+}
+submitDonationDetails(){
+  this.submitted &#x3D; true;
+  this.clicked &#x3D; true;
+    if (this.secondFormGroup.invalid) {
+      this.clicked &#x3D; false;
+  }
+  let submitFormVal &#x3D;  this.secondFormGroup.value
+  let submitform &#x3D; this.firstFormGroup.value;
+var donorSattus &#x3D; this.show_donor_information
+var id &#x3D; this.fundraiserId;
+  var data&#x3D;{
+    name:submitFormVal.name,
+    email:submitFormVal.email,
+    amount:submitform.amount,
+    show_donor_information:donorSattus,
+    fundraiser_id:id
+  }
+  this.apiService.submitDonation(data).subscribe((res:any)&#x3D;&gt;{
+     if (res.success &#x3D;&#x3D; 1) {
+       this.secondFormGroup.reset();
+       this.submitted &#x3D; false;
+       this.clicked &#x3D; false;
+       $(&#x27;#wizard-up-modal&#x27;).modal(&#x27;hide&#x27;);
+       $(&#x27;#gmFormmodal&#x27;).modal(&#x27;show&#x27;);
+     } else {
+}
+   }, error &#x3D;&gt; {
+   })
+  }
+  get f4() {
+    return this.eightygmForm.controls;
+  }
+  open80gForm(){
+    $(&#x27;#gmFormmodal&#x27;).modal(&#x27;hide&#x27;);
+    $(&#x27;#80gmFormmodal&#x27;).modal(&#x27;show&#x27;);
+  }
+  submit80gForm(){
+    this.submittedgmForm &#x3D; true;
+    this.clicked &#x3D; true;
+      if (this.eightygmForm.invalid) {
+        this.clicked &#x3D; false;
+    }
+  }
+  closeDonateModal(){
+    $(&#x27;#wizard-up-modal&#x27;).modal(&#x27;hide&#x27;);
+    $(&#x27;#closeDonateModal&#x27;).modal(&#x27;show&#x27;);
+
+  }
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;!--slider section start--&gt;
+
+&lt;div class&#x3D;&quot;page-banner&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div id&#x3D;&quot;carousel&quot; class&#x3D;&quot;carousel slide carousel-fade&quot; data-ride&#x3D;&quot;carousel&quot;&gt;
+			&lt;ol class&#x3D;&quot;carousel-indicators&quot;&gt;
+				&lt;li data-target&#x3D;&quot;#carousel&quot; data-slide-to&#x3D;&quot;0&quot; class&#x3D;&quot;active&quot;&gt;&lt;/li&gt;
+				&lt;li data-target&#x3D;&quot;#carousel&quot; data-slide-to&#x3D;&quot;1&quot;&gt;&lt;/li&gt;
+        &lt;li data-target&#x3D;&quot;#carousel&quot; data-slide-to&#x3D;&quot;2&quot;&gt;&lt;/li&gt;
+
+			&lt;/ol&gt;
+			&lt;!-- Carousel items --&gt;
+      &lt;div class&#x3D;&quot;carousel-inner&quot;&gt;
+				&lt;div class&#x3D;&quot;carousel-item&quot; *ngFor&#x3D;&quot;let item of bannerList ,let i &#x3D; index&quot; [class]&#x3D;&quot;(i &#x3D;&#x3D;&#x3D; 0) ? &#x27;active&#x27; : &#x27;inactive&#x27;&quot;&gt;
+					&lt;div class&#x3D;&quot;page-caption&quot; &gt;
+						&lt;h3&gt;{{item.title}}&lt;/h3&gt;
+						&lt;!-- &lt;p&gt;{{item.story}} &lt;/p&gt; --&gt;
+						&lt;button type&#x3D;&quot;&quot; class&#x3D;&quot;donation&quot; (click)&#x3D;&quot;donatenowModal(item.id)&quot;&gt;&lt;i class&#x3D;&quot;fa fa-heart&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;Donate Now&lt;/button&gt;
+
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- Carousel nav --&gt;
+			&lt;a class&#x3D;&quot;carousel-control left&quot; href&#x3D;&quot;#carousel&quot; data-slide&#x3D;&quot;prev&quot;&gt;&lt;/a&gt;
+			&lt;a class&#x3D;&quot;carousel-control right&quot; href&#x3D;&quot;#carousel&quot; data-slide&#x3D;&quot;next&quot;&gt;&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;section-p-campaigns&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+				&lt;div class&#x3D;&quot;row&quot; &gt;
+					&lt;div class&#x3D;&quot;col-md-4 col-lg-4 col-sm-4 col-12&quot; *ngFor&#x3D;&quot;let item of fundRaiserList | paginate: {
+            itemsPerPage: 20,
+            currentPage: pageNumber,
+            totalItems: totalCount
+          }&quot;&gt;
+						&lt;div class&#x3D;&quot;slide-scheme&quot;&gt;
+              &lt;div class&#x3D;&quot;campaign-img&quot;&gt;
+                &lt;img src&#x3D;&quot;{{baseUrl}}{{item.image_url}}&quot; class&#x3D;&quot;img-fluid img-new&quot; style&#x3D;&quot;cursor: pointer;&quot; routerLink&#x3D;&quot;/fund-raiser-detail/{{item.id}}&quot; &gt;
+
+              &lt;/div&gt;
+							&lt;div class&#x3D;&quot;scheme-subject&quot;&gt;
+								&lt;h3 class&#x3D;&quot;h3-txt&quot;&gt;{{item.title}}&lt;/h3&gt;
+								&lt;span&gt;{{item.fund_required}}&lt;/span&gt;
+								&lt;li&gt;Donation/Month(Rs)&lt;/li&gt;
+								&lt;div class&#x3D;&quot;social-link&quot;&gt;
+									&lt;li class&#x3D;&quot;cursr-pointer&quot;&gt;share now&lt;/li&gt;
+                  &lt;share-buttons [theme]&#x3D;&quot;&#x27;modern-dark&#x27;&quot;
+                  [include]&#x3D;&quot;[&#x27;facebook&#x27;,&#x27;twitter&#x27;,&#x27;linkedin&#x27;,&#x27;whatsapp&#x27;]&quot;
+                  [show]&#x3D;&quot;4&quot;
+                  [size]&#x3D;&quot;1&quot;
+                  [url]&#x3D;&quot;&#x27;https://crowdworksindia.org/#/fund-raiser-detail/&#x27; + item.id&quot;
+                  [image] &#x3D;&quot;&#x27;https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg&#x27;&quot;
+                  [autoSetMeta]&#x3D;&quot;false&quot;
+                  &gt;&lt;/share-buttons&gt;
+								&lt;/div&gt;
+								&lt;a href&#x3D;&quot;&quot; routerLink&#x3D;&quot;/fund-raiser-detail/{{item.id}}&quot; &gt;&lt;i class&#x3D;&quot;fa fa-heart&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;Donate Now&lt;/a&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+  &lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;totalCount &gt; 20&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+    &lt;div class&#x3D;&quot;container d-flex justify-content-center&quot;&gt;
+      &lt;pagination-controls
+      (pageChange)&#x3D;&quot;pageChanged($event)&quot;
+    &gt;&lt;/pagination-controls&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id&#x3D;&quot;My-comments&quot; class&#x3D;&quot;tab-pane&quot; *ngIf&#x3D;&quot;fundRaiserList.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-4 col-4&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+      &lt;div class&#x3D;&quot;profile-donation&quot;&gt;
+        &lt;div class&#x3D;&quot;pf-sub&quot;&gt;
+          &lt;h2 style&#x3D;&quot;color: black; &quot;&gt;No results found!&lt;/h2&gt;
+
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-4 col-4&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12 &quot;&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- &lt;script src&#x3D;&quot;../../../../src/assets/js/share-buttons.js&quot;&gt;&lt;/script&gt; --&gt;
+
+&lt;div class&#x3D;&quot;modal fade wizard-tab-modal &quot; id&#x3D;&quot;wizard-up-modal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered &quot; role&#x3D;&quot;document&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-content &quot;&gt;
+      &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close btn-close1&quot; (click)&#x3D;&quot;closeModal()&quot;  aria-label&#x3D;&quot;Close&quot;&gt;
+          &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-body &quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12 col-lg-12 form-wizard&quot;&gt;
+          &lt;mat-horizontal-stepper linear #stepper &gt;
+            &lt;mat-step [stepControl]&#x3D;&quot;firstFormGroup&quot; &gt;
+              &lt;form [formGroup]&#x3D;&quot;firstFormGroup&quot;&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                          &lt;div class&#x3D;&quot;input-group input-group-lg&quot;&gt;
+                            &lt;div class&#x3D;&quot;input-group-prepend&quot;&gt;
+                              &lt;span class&#x3D;&quot;input-group-text wz-ip-grp&quot;&gt;&lt;i class&#x3D;&quot;fa fa-inr&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;input class&#x3D;&quot;form-control wz-txt-box required&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;1000&quot; [(ngModel)]&#x3D;&quot;donationAmount&quot; formControlName&#x3D;&quot;amount&quot; aria-label&#x3D;&quot;Search&quot;  size&#x3D;&quot;50&quot;&gt;
+                          &lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                     &lt;div class&#x3D;&quot;form-row&quot;&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-2 col-4&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn-block rs-block btn-color&quot; (click)&#x3D;&quot;donAmount($event)&quot; value&#x3D;&quot;1000&quot;&gt;₹1000&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-2 col-4&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn-block rs-block&quot; (click)&#x3D;&quot;donAmount($event)&quot; value&#x3D;&quot;2000&quot;&gt;₹2000&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-2 col-4&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn-block rs-block&quot; (click)&#x3D;&quot;donAmount($event)&quot; value&#x3D;&quot;3000&quot;&gt;₹3000&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-3 col-4&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn-block rs-block&quot; (click)&#x3D;&quot;donAmount($event)&quot; value&#x3D;&quot;4000&quot;&gt;₹4000&lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-3 col-4&quot;&gt;
+                          &lt;button class&#x3D;&quot;btn-block rs-block&quot; (click)&#x3D;&quot;donAmount($event)&quot; value&#x3D;&quot;4000&quot;&gt;₹5000&lt;/button&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                      &lt;button class&#x3D;&quot;pull-right btn-wz-wt btn-next&quot; mat-button matStepperNext&gt;NEXT&lt;/button&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+              &lt;/form&gt;
+            &lt;/mat-step&gt;
+            &lt;mat-step [stepControl]&#x3D;&quot;secondFormGroup&quot; &gt;
+              &lt;form [formGroup]&#x3D;&quot;secondFormGroup&quot;&gt;
+                &lt;h3 class&#x3D;&quot;wz-h3 mb-20&quot;&gt;Donor informations&lt;/h3&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                  &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                    &lt;div class&#x3D;&quot;donate-form&quot;&gt;
+                      &lt;div class&#x3D;&quot;form-row&quot;&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-6 mb-10&quot;&gt;
+                          &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control donor-txt-box &quot; formControlName&#x3D;&quot;name&quot;  placeholder&#x3D;&quot;Full name&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f2.name.errors }&quot;&gt;
+                          &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f2.name.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                            &lt;div *ngIf&#x3D;&quot;f2.name.errors.required&quot; class&#x3D;&quot;errr-msg-white&quot;&gt;This field is required&lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class&#x3D;&quot;login-toggle-btn&quot;&gt;
+                                &lt;input type&#x3D;&quot;checkbox&quot; (click)&#x3D;&quot;showinfo($event)&quot; formControlName&#x3D;&quot;show_donor_information&quot;&gt;
+                                &lt;label&gt;make my donation anonymous&lt;/label&gt;
+                            &lt;/div&gt;
+
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-6 mb-10&quot;&gt;
+                          &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control donor-txt-box inp-backcolor&quot; id&#x3D;&quot;&quot; [email]&#x3D;&quot;true&quot;  formControlName&#x3D;&quot;email&quot;  placeholder&#x3D;&quot;Email&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f2.email.errors }&quot;&gt;
+                          &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f2.email.errors&quot; class&#x3D;&quot;invalid-feedback errr-msg-white&quot;&gt;
+                            &lt;div *ngIf&#x3D;&quot;f2.email.errors.required&quot;&gt;This field is required&lt;/div&gt;
+                            &lt;div *ngIf&#x3D;&quot;f2.email.errors.pattern&quot;&gt;Please, Enter valid email.&lt;/div&gt;
+
+
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-6 mb-30&quot;&gt;
+                          &lt;input type&#x3D;&quot;hidden&quot; class&#x3D;&quot;form-control donor-txt-box&quot; id&#x3D;&quot;inputPassword4&quot; placeholder&#x3D;&quot;phone number&quot;&gt;
+                        &lt;/div&gt;
+                        &lt;div class&#x3D;&quot;form-group col-md-6 mb-20&quot;&gt;
+                            &lt;button class&#x3D;&quot;btn-wz-wt w-100&quot; (click)&#x3D;&quot;submitDonationDetails()&quot;&gt; proceed to pay ₹{{firstFormGroup.value.amount}}&lt;/button&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                  &lt;!-- &lt;button mat-button matStepperPrevious class&#x3D;&quot;btn-wz-wt&quot;&gt;Back&lt;/button&gt; --&gt;
+                  &lt;!-- &lt;button mat-button matStepperNext&gt;&lt;/button&gt; --&gt;
+                &lt;/div&gt;
+              &lt;/form&gt;
+            &lt;/mat-step&gt;
+            &lt;/mat-horizontal-stepper&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class&#x3D;&quot;modal fade payed-modal&quot; id&#x3D;&quot;gmFormmodal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered&quot; role&#x3D;&quot;document&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+      &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-12 col-lg-12&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-12 col-md-12&quot;&gt;
+              &lt;div class&#x3D;&quot;payd-msg&quot;&gt;
+                &lt;p class&#x3D;&quot;mt-4&quot;&gt;
+                  Do you want a 80g form?&lt;/p&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                  &lt;div class&#x3D;&quot;col-md-2 col-12&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-4 col-12&quot;&gt;
+                    &lt;button class&#x3D;&quot;f-btn-border-red&quot; type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;open80gForm()&quot;&gt;Yes&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-4 col-12&quot;&gt;
+                    &lt;button class&#x3D;&quot;f-btn-border&quot; type&#x3D;&quot;submit&quot;&gt;No&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-2 col-12&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;modal fade eighty-gmform-modal&quot; id&#x3D;&quot;80gmFormmodal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered&quot; role&#x3D;&quot;document&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content modal-width&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; (click)&#x3D;&quot;close80gForm()&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+					&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+				&lt;/button&gt;
+			&lt;/div&gt;
+      &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+        &lt;form [formGroup]&#x3D;&quot;eightygmForm&quot;&gt;
+          &lt;h3 class&#x3D;&quot;wz-h3 mb-20&quot;&gt;80g Form&lt;/h3&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+              &lt;div class&#x3D;&quot;donate-form&quot;&gt;
+                &lt;div class&#x3D;&quot;form-row&quot; &gt;
+                  &lt;div class&#x3D;&quot;form-group col-md-6 mb-10&quot; style&#x3D;&quot;padding-bottom: 20px;&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control donor-txt-box &quot; formControlName&#x3D;&quot;pancard_no&quot; id&#x3D;&quot;inputEmail4&quot; placeholder&#x3D;&quot;Pan Card Number&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submittedgmForm &amp;&amp; f4.pancard_no.errors }&quot;&gt;
+                    &lt;div *ngIf&#x3D;&quot;submittedgmForm &amp;&amp; f4.pancard_no.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                      &lt;div *ngIf&#x3D;&quot;f4.pancard_no.errors.required&quot; class&#x3D;&quot;errr-msg-white&quot;&gt;This field is required&lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;form-group col-md-6 mb-10&quot; style&#x3D;&quot;padding-bottom: 20px;&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control donor-txt-box inp-backcolor&quot; id&#x3D;&quot;&quot; formControlName&#x3D;&quot;name&quot;  placeholder&#x3D;&quot;Name&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submittedgmForm &amp;&amp; f4.name.errors }&quot;&gt;
+                    &lt;div *ngIf&#x3D;&quot;submittedgmForm &amp;&amp; f4.name.errors&quot; class&#x3D;&quot;invalid-feedback errr-msg-white&quot;&gt;
+                      &lt;div *ngIf&#x3D;&quot;f4.name.errors.required&quot;&gt;This field is required&lt;/div&gt;
+                      &lt;/div&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class&#x3D;&quot;form-group col-md-6 mb-30 &quot; style&#x3D;&quot;padding-bottom: 20px;&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control donor-txt-box inp-backcolor&quot; id&#x3D;&quot;&quot; formControlName&#x3D;&quot;phone_number&quot;  placeholder&#x3D;&quot;Phone Number&quot; [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submittedgmForm &amp;&amp; f4.phone_number.errors }&quot;&gt;
+                    &lt;div *ngIf&#x3D;&quot;submittedgmForm &amp;&amp; f4.phone_number.errors&quot; class&#x3D;&quot;invalid-feedback errr-msg-white&quot;&gt;
+                      &lt;div *ngIf&#x3D;&quot;f4.phone_number.errors.required&quot;&gt;This field is required&lt;/div&gt;
+                      &lt;/div&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;form-group col-md-6 mb-20 &quot; style&#x3D;&quot;padding-bottom: 20px;&quot;&gt;
+                      &lt;button class&#x3D;&quot;btn-wz-wt w-100&quot; (click)&#x3D;&quot;submit80gForm()&quot; &gt; Submit&lt;/button&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;!-- &lt;button mat-button matStepperPrevious class&#x3D;&quot;btn-wz-wt&quot;&gt;Back&lt;/button&gt; --&gt;
+            &lt;!-- &lt;button mat-button matStepperNext&gt;&lt;/button&gt; --&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;modal fade payed-modal&quot; id&#x3D;&quot;closeDonateModal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered&quot; role&#x3D;&quot;document&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+      &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+        &lt;div class&#x3D;&quot;col-lg-12 col-lg-12&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-lg-12 col-md-12&quot;&gt;
+              &lt;div class&#x3D;&quot;payd-msg&quot;&gt;
+                &lt;p class&#x3D;&quot;mt-4&quot;&gt;
+                  I Could Really Use Your Help Right Now.You Can Help Me with a Contribution As Small as ₹300.&lt;/p&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                  &lt;div class&#x3D;&quot;col-md-2 col-12&quot;&gt;&lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-4 col-12&quot;&gt;
+                    &lt;button class&#x3D;&quot;f-btn-border&quot; type&#x3D;&quot;submit&quot; data-dismiss&#x3D;&quot;modal&quot; &gt;No, Thanks&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-4 col-12&quot;&gt;
+                    &lt;button class&#x3D;&quot;f-btn-border-red&quot; type&#x3D;&quot;submit&quot;&gt;SureI&#x27;ll Help&lt;/button&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;col-md-2 col-12&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./search-list.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.form-control:focus{border-color: #dc3545;;  box-shadow: none; -webkit-box-shadow: none;}
+.has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+
+.inp-backcolor{
+  background-color: transparent;
+  color: white;
+
+}
+::ng-deep  .sb-button{
+  width: 36px;
+    margin: 0px 0px 10px 0px;
+    padding: 5px 0px 0px 0px;
+    display: inline-block !important;
+}
+::ng-deep .sb-facebook{
+background-color: #4267B2;
+color: white;
+height: 30px;
+
+
+}
+::ng-deep .sb-twitter{
+  background-color:#00acee;
+  color: white;
+  height: 30px;
+
+
+  }
+  ::ng-deep .sb-linkedin{
+    background-color: #00acee;
+    color: white;
+    height: 30px;
+
+
+    }
+    ::ng-deep .sb-whatsapp{
+      background-color: #4FCE5D;
+      color: white;
+      height: 30px;
+
+      }
+
+    ::ng-deep .sb-wrapper {
+      font-family: &#x27;Roboto&#x27;, sans-serif;
+      color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+      transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .share-btn &gt; a {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 12px;
+    font-family: Verdana, Arial;
+}
+.share-btn &gt; a:hover {
+    cursor: pointer;
+}
+
+.campaign-img{
+  display: flex;
+  height: 225px;
+}
+
+.campaign-img img{
+  flex-shrink: 63;
+    min-width: 100%;
+    min-height: 225px;
+    max-height: 225px;
+    object-fit: cover;
+    align-items: center;
+}
+.img-new{
+  height: 250px;
+  object-fit: cover;
+
+}
+.h3-txt{
+  min-height: 80px !important;
+}
+
+/* // donate now wizard */
+
+.wizard-tab-modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+}
+.wizard-tab-modal.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 99999;
+}
+.wizard-tab-modal .modal-header .close{
+  padding: 0px;
+  margin: 0rem 1rem -1rem auto;
+}
+.wizard-tab-modal .modal-dialog {
+  max-width: 50%;
+}
+.wizard-tab-modal .modal-content {
+  border-radius: 0;
+  min-height: 300px;
+  overflow: auto;
+  border-radius: 0px;
+  background-color: #32374a;
+  background: linear-gradient(100deg, rgba(195,49,62,1) 65%, rgba(50,55,74,1) 65%);
+}
+.wizard-tab-modal .modal-header {
+  border: none;
+  padding-bottom: 10px;
+}
+.wizard-tab-modal .modal-width{
+  max-width: 800px;
+}
+.wizard-tab-modal .modal-body {
+  padding: 30px 20px;
+}
+.form-wizard fieldset {
+  display: none;
+  text-align: left;
+  border:0px !important
+}
+
+.wz-h3{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+  margin: 0px 0px 10px 0px;
+}
+.wz-txt-box{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  background-color: #fff;
+  border: none;
+  border-radius: 0px !important;
+  color:#000;
+  font-size: 16px;
+  font-weight: 500;
+}
+.wz-ip-grp{
+  border-radius: 0px !important;
+  border:none;
+  background-color: #32374a;
+  color:#fff;
+}
+.rs-block{
+  width: 100%;
+  padding: 12px 10px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#000;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 14px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: -1px 1px 8px 5px rgb(0 0 0 / 20%);
+}
+.btn-wz-wt{
+  width: 200px;
+  padding: 8px 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#c3313e;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 16px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.dt-amount-form ::placeholder  {
+  color: #32374a;
+  opacity: .8;
+}
+.donor-info-form ::placeholder  {
+  color: #fff;
+  opacity: .8;
+}
+.donor-txt-box {
+    width: 100%;
+    background: 0 0;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.8);
+    border-radius: 0;
+    color: #fff;
+    text-transform: lowercase;
+    font-family: &#x27;Montserrat&#x27;, sans-serif;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 991px) {
+  .wizard-tab-modal .modal-dialog {
+    max-width: 80%;
+}
+  .wizard-tab-modal .modal-body {
+    padding: 20px 20px;
+}
+}
+@media only screen and (max-width: 767px) {
+  .wizard-tab-modal .modal-dialog {
+    max-width: 100%;
+}
+  .wizard-tab-modal .modal-body {
+    padding: 20px 10px;
+}
+.donor-txt-box {
+  padding: 8px 5px;
+  }
+  .donor-info-form .mb-30{
+    margin: 0px 0px 20px 0px !important;
+  }
+}
+.login-toggle-btn input[type&#x3D;&quot;checkbox&quot;] {
+  height: 15px;
+  margin: 0;
+  position: relative;
+  top: 2px;
+  width: 17px;
+  background-color: transparent !important;
+}
+.login-toggle-btn {
+  padding: 0px;
+}
+.login-toggle-btn label {
+  text-transform: capitalize;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+ }
+
+ .errr-msg-white{
+   color: #dbd9d9;
+ }
+
+ ::ng-deep .mat-stepper-horizontal{
+background-color: transparent;
+ }
+ ::ng-deep .mat-horizontal-stepper-header-container {
+
+display: none !important;
+ }
+
+.btn-color{
+  background-color: #32374a;
+    color: white;
+}
+::placeholder  {
+  color: #fff !important;
+  opacity: .8 !important;
+}
+
+
+@media only screen and (max-width: 991px){
+    .h3-txt{
+    min-height: 0px !important;
+
+  }
+
+}
+
+
+/* // donate now wizard */
+
+.wizard-tab-modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+}
+.wizard-tab-modal.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 99999;
+}
+.wizard-tab-modal .modal-header .close{
+  padding: 0px;
+  margin: 0rem 1rem -1rem auto;
+}
+.wizard-tab-modal .modal-dialog {
+  max-width: 50%;
+}
+.wizard-tab-modal .modal-content {
+  border-radius: 0;
+  min-height: 300px;
+  overflow: auto;
+  border-radius: 0px;
+  background-color: #32374a;
+  background: linear-gradient(100deg, rgba(195,49,62,1) 65%, rgba(50,55,74,1) 65%);
+}
+.wizard-tab-modal .modal-header {
+  border: none;
+  padding-bottom: 10px;
+}
+.wizard-tab-modal .modal-width{
+  max-width: 800px;
+}
+.wizard-tab-modal .modal-body {
+  padding: 30px 20px;
+}
+.form-wizard fieldset {
+  display: none;
+  text-align: left;
+  border:0px !important
+}
+
+.wz-h3{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+  margin: 0px 0px 10px 0px;
+}
+.wz-txt-box{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  background-color: #fff;
+  border: none;
+  border-radius: 0px !important;
+  color:#000;
+  font-size: 16px;
+  font-weight: 500;
+}
+.wz-ip-grp{
+  border-radius: 0px !important;
+  border:none;
+  background-color: #32374a;
+  color:#fff;
+}
+.rs-block{
+  width: 100%;
+  padding: 12px 10px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#000;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 14px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: -1px 1px 8px 5px rgb(0 0 0 / 20%);
+}
+.btn-wz-wt{
+  width: 200px;
+  padding: 8px 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#c3313e;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 16px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.dt-amount-form ::placeholder  {
+  color: #32374a;
+  opacity: .8;
+}
+.donor-info-form ::placeholder  {
+  color: #fff;
+  opacity: .8;
+}
+.donor-txt-box {
+    width: 100%;
+    background: 0 0;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.8);
+    border-radius: 0;
+    color: #fff;
+    text-transform: lowercase;
+    font-family: &#x27;Montserrat&#x27;, sans-serif;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 991px) {
+  .wizard-tab-modal .modal-dialog {
+    max-width: 80%;
+}
+  .wizard-tab-modal .modal-body {
+    padding: 20px 20px;
+}
+}
+@media only screen and (max-width: 767px) {
+  .wizard-tab-modal .modal-dialog {
+    max-width: 100%;
+}
+  .wizard-tab-modal .modal-body {
+    padding: 20px 10px;
+}
+.donor-txt-box {
+  padding: 8px 5px;
+  }
+  .donor-info-form .mb-30{
+    margin: 0px 0px 20px 0px !important;
+  }
+}
+.login-toggle-btn input[type&#x3D;&quot;checkbox&quot;] {
+  height: 15px;
+  margin: 0;
+  position: relative;
+  top: 2px;
+  width: 17px;
+  background-color: transparent !important;
+}
+.login-toggle-btn {
+  padding: 0px;
+}
+.login-toggle-btn label {
+  text-transform: capitalize;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+ }
+
+ .errr-msg-white{
+   color: #dbd9d9;
+ }
+
+ ::ng-deep .mat-stepper-horizontal{
+background-color: transparent;
+ }
+ ::ng-deep .mat-horizontal-stepper-header-container {
+
+display: none !important;
+ }
+
+.btn-color{
+  background-color: #32374a;
+    color: white;
+}
+::placeholder  {
+  color: #fff !important;
+  opacity: .8 !important;
+}
+
+/* // 80gFormYesOrNoModal */
+.input-box,.textarea-div {
+  color: black !important;
+}
+.payed-modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+}
+.payed-modal.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 99999;
+}
+.payed-modal .modal-dialog {
+  max-width: 40%;
+}
+.payed-modal .modal-content {
+  border-radius: 0;
+  max-height: 300px;
+  overflow: auto;
+  /* border-radius: 20px; */
+  background-color: #32374a;
+}
+.payed-modal .modal-body {
+  padding: 30px 30px;
+}
+.payd-msg{
+  display: block;
+}
+.payd-msg p{
+  display: block;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  text-transform: capitalize;
+  font-size:18px;
+  color:#fff;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+.f-btn-border,.f-btn-border-red{
+  width: 100%;
+  padding: 8px 0px;
+  border: none;
+  border: solid 2px #fff;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  /* border-radius: 40px; */
+   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0px 0px 10px 0px;
+}
+.f-btn-border-red{
+  background-color: #c3313e;
+  border: solid 2px #c3313e;
+}
+@media only screen and (max-width: 991px) {
+  .payed-modal .modal-dialog {
+    max-width: 60%;
+  }
+  .payd-msg p{
+  font-size:14px;
+}
+}
+
+@media only screen and (max-width: 767px) {
+  .payed-modal .modal-dialog {
+    max-width: 70%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .payed-modal .modal-dialog {
+    max-width: 100%;
+  }
+}
+
+
+/* 80gmForm */
+
+/* // donate now wizard */
+
+.eighty-gmform-modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+}
+.eighty-gmform-modal.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 99999;
+}
+.eighty-gmform-modal .modal-header .close{
+  padding: 0px;
+  margin: 0rem 1rem -1rem auto;
+}
+.eighty-gmform-modal .modal-dialog {
+  max-width: 50%;
+}
+.eighty-gmform-modal .modal-content {
+  border-radius: 0;
+  min-height: 300px;
+  overflow: auto;
+  border-radius: 0px;
+  background-color: #32374a;
+  background: linear-gradient(100deg, rgba(195,49,62,1) 65%, rgba(50,55,74,1) 65%);
+}
+.eighty-gmform-modal .modal-header {
+  border: none;
+  padding-bottom: 10px;
+}
+.eighty-gmform-modal .modal-width{
+  max-width: 800px;
+}
+.eighty-gmform-modal .modal-body {
+  padding: 30px 20px;
+}
+.form-wizard fieldset {
+  display: none;
+  text-align: left;
+  border:0px !important
+}
+
+.wz-h3{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+  margin: 0px 0px 10px 0px;
+}
+.wz-txt-box{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  background-color: #fff;
+  border: none;
+  border-radius: 0px !important;
+  color:#000;
+  font-size: 16px;
+  font-weight: 500;
+}
+.wz-ip-grp{
+  border-radius: 0px !important;
+  border:none;
+  background-color: #32374a;
+  color:#fff;
+}
+.rs-block{
+  width: 100%;
+  padding: 12px 10px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#000;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 14px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: -1px 1px 8px 5px rgb(0 0 0 / 20%);
+}
+.btn-wz-wt{
+  width: 200px;
+  padding: 8px 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#c3313e;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 16px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.dt-amount-form ::placeholder  {
+  color: #32374a;
+  opacity: .8;
+}
+.donor-info-form ::placeholder  {
+  color: #fff;
+  opacity: .8;
+}
+.donor-txt-box {
+    width: 100%;
+    background: 0 0;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.8);
+    border-radius: 0;
+    color: #fff;
+    /* text-transform: lowercase; */
+    font-family: &#x27;Montserrat&#x27;, sans-serif;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 991px) {
+  .eighty-gmform-modal .modal-dialog {
+    max-width: 80%;
+}
+.eighty-gmform-modal .modal-body {
+    padding: 20px 20px;
+}
+}
+@media only screen and (max-width: 767px) {
+  .eighty-gmform-modal .modal-dialog {
+    max-width: 100%;
+}
+.eighty-gmform-modal .modal-body {
+    padding: 20px 10px;
+}
+}
+
+.inpt-txt{
+  padding: 40px 10px;
+}
+.profile-donation{
+  background-color: white;
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!--slider section start--><div class="page-banner">	<div class="container">		<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">			<ol class="carousel-indicators">				<li data-target="#carousel" data-slide-to="0" class="active"></li>				<li data-target="#carousel" data-slide-to="1"></li>        <li data-target="#carousel" data-slide-to="2"></li>			</ol>			<!-- Carousel items -->      <div class="carousel-inner">				<div class="carousel-item" *ngFor="let item of bannerList ,let i = index" [class]="(i === 0) ? \'active\' : \'inactive\'">					<div class="page-caption" >						<h3>{{item.title}}</h3>						<!-- <p>{{item.story}} </p> -->						<button type="" class="donation" (click)="donatenowModal(item.id)"><i class="fa fa-heart" aria-hidden="true"></i>Donate Now</button>					</div>				</div>			</div>			<!-- Carousel nav -->			<a class="carousel-control left" href="#carousel" data-slide="prev"></a>			<a class="carousel-control right" href="#carousel" data-slide="next"></a>		</div>	</div></div><div class="section-p-campaigns">	<div class="container">		<div class="row">			<div class="col-md-12">				<div class="row" >					<div class="col-md-4 col-lg-4 col-sm-4 col-12" *ngFor="let item of fundRaiserList | paginate: {            itemsPerPage: 20,            currentPage: pageNumber,            totalItems: totalCount          }">						<div class="slide-scheme">              <div class="campaign-img">                <img src="{{baseUrl}}{{item.image_url}}" class="img-fluid img-new" style="cursor: pointer;" routerLink="/fund-raiser-detail/{{item.id}}" >              </div>							<div class="scheme-subject">								<h3 class="h3-txt">{{item.title}}</h3>								<span>{{item.fund_required}}</span>								<li>Donation/Month(Rs)</li>								<div class="social-link">									<li class="cursr-pointer">share now</li>                  <share-buttons [theme]="\'modern-dark\'"                  [include]="[\'facebook\',\'twitter\',\'linkedin\',\'whatsapp\']"                  [show]="4"                  [size]="1"                  [url]="\'https://crowdworksindia.org/#/fund-raiser-detail/\' + item.id"                  [image] ="\'https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg\'"                  [autoSetMeta]="false"                  ></share-buttons>								</div>								<a href="" routerLink="/fund-raiser-detail/{{item.id}}" ><i class="fa fa-heart" aria-hidden="true"></i>Donate Now</a>							</div>						</div>					</div>				</div>			</div>		</div>	</div>  <div class="row" *ngIf="totalCount > 20">    <div class="col-md-12">    <div class="container d-flex justify-content-center">      <pagination-controls      (pageChange)="pageChanged($event)"    ></pagination-controls>    </div>    </div></div></div><div id="My-comments" class="tab-pane" *ngIf="fundRaiserList.length === 0">  <div class="row">    <div class="col-md-4 col-4"></div>    <div class="col-md-4">      <div class="profile-donation">        <div class="pf-sub">          <h2 style="color: black; ">No results found!</h2>        </div>      </div>    </div>    <div class="col-md-4 col-4"></div>    <div class="col-md-12 ">    </div>  </div></div><!-- <script src="../../../../src/assets/js/share-buttons.js"></script> --><div class="modal fade wizard-tab-modal " id="wizard-up-modal" tabindex="-1" role="dialog" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered " role="document">    <div class="modal-content ">      <div class="modal-header">        <button type="button" class="close btn-close1" (click)="closeModal()"  aria-label="Close">          <span aria-hidden="true">&times;</span>        </button>      </div>      <div class="modal-body ">        <div class="col-md-12 col-lg-12 form-wizard">          <mat-horizontal-stepper linear #stepper >            <mat-step [stepControl]="firstFormGroup" >              <form [formGroup]="firstFormGroup">                <div class="row">                  <div class="col-md-12">                      <div class="form-group">                          <div class="input-group input-group-lg">                            <div class="input-group-prepend">                              <span class="input-group-text wz-ip-grp"><i class="fa fa-inr" aria-hidden="true"></i></span>                            </div>                            <input class="form-control wz-txt-box required" type="text" placeholder="1000" [(ngModel)]="donationAmount" formControlName="amount" aria-label="Search"  size="50">                          </div>                      </div>                  </div>                  <div class="col-md-12">                     <div class="form-row">                        <div class="form-group col-md-2 col-4">                            <button class="btn-block rs-block btn-color" (click)="donAmount($event)" value="1000">₹1000</button>                        </div>                        <div class="form-group col-md-2 col-4">                            <button class="btn-block rs-block" (click)="donAmount($event)" value="2000">₹2000</button>                        </div>                        <div class="form-group col-md-2 col-4">                            <button class="btn-block rs-block" (click)="donAmount($event)" value="3000">₹3000</button>                        </div>                        <div class="form-group col-md-3 col-4">                            <button class="btn-block rs-block" (click)="donAmount($event)" value="4000">₹4000</button>                        </div>                        <div class="form-group col-md-3 col-4">                          <button class="btn-block rs-block" (click)="donAmount($event)" value="4000">₹5000</button>                      </div>                    </div>                  </div>                  <div class="col-md-12">                    <div class="form-group">                      <button class="pull-right btn-wz-wt btn-next" mat-button matStepperNext>NEXT</button>                    </div>                  </div>                </div>              </form>            </mat-step>            <mat-step [stepControl]="secondFormGroup" >              <form [formGroup]="secondFormGroup">                <h3 class="wz-h3 mb-20">Donor informations</h3>                <div class="row">                  <div class="col-md-12">                    <div class="donate-form">                      <div class="form-row">                        <div class="form-group col-md-6 mb-10">                          <input type="text" class="form-control donor-txt-box " formControlName="name"  placeholder="Full name" [ngClass]="{ \'is-invalid\': submitted && f2.name.errors }">                          <div *ngIf="submitted && f2.name.errors" class="invalid-feedback">                            <div *ngIf="f2.name.errors.required" class="errr-msg-white">This field is required</div>                            </div>                            <div class="login-toggle-btn">                                <input type="checkbox" (click)="showinfo($event)" formControlName="show_donor_information">                                <label>make my donation anonymous</label>                            </div>                        </div>                        <div class="form-group col-md-6 mb-10">                          <input type="text" class="form-control donor-txt-box inp-backcolor" id="" [email]="true"  formControlName="email"  placeholder="Email" [ngClass]="{ \'is-invalid\': submitted && f2.email.errors }">                          <div *ngIf="submitted && f2.email.errors" class="invalid-feedback errr-msg-white">                            <div *ngIf="f2.email.errors.required">This field is required</div>                            <div *ngIf="f2.email.errors.pattern">Please, Enter valid email.</div>                            </div>                        </div>                        <div class="form-group col-md-6 mb-30">                          <input type="hidden" class="form-control donor-txt-box" id="inputPassword4" placeholder="phone number">                        </div>                        <div class="form-group col-md-6 mb-20">                            <button class="btn-wz-wt w-100" (click)="submitDonationDetails()"> proceed to pay ₹{{firstFormGroup.value.amount}}</button>                        </div>                      </div>                    </div>                  </div>                </div>                <div>                  <!-- <button mat-button matStepperPrevious class="btn-wz-wt">Back</button> -->                  <!-- <button mat-button matStepperNext></button> -->                </div>              </form>            </mat-step>            </mat-horizontal-stepper>        </div>      </div>    </div>  </div></div><div class="modal fade payed-modal" id="gmFormmodal" tabindex="-1" role="dialog" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered" role="document">    <div class="modal-content">      <div class="modal-body">        <div class="col-lg-12 col-lg-12">          <div class="row">            <div class="col-lg-12 col-md-12">              <div class="payd-msg">                <p class="mt-4">                  Do you want a 80g form?</p>                <div class="row">                  <div class="col-md-2 col-12"></div>                  <div class="col-md-4 col-12">                    <button class="f-btn-border-red" type="submit" (click)="open80gForm()">Yes</button>                  </div>                  <div class="col-md-4 col-12">                    <button class="f-btn-border" type="submit">No</button>                  </div>                  <div class="col-md-2 col-12"></div>                </div>            </div>          </div>        </div>      </div>    </div>  </div></div></div><div class="modal fade eighty-gmform-modal" id="80gmFormmodal" tabindex="-1" role="dialog" aria-hidden="true">	<div class="modal-dialog modal-dialog-centered" role="document">		<div class="modal-content modal-width">			<div class="modal-header">				<button type="button" class="close" (click)="close80gForm()" aria-label="Close">					<span aria-hidden="true">&times;</span>				</button>			</div>      <div class="modal-body">        <form [formGroup]="eightygmForm">          <h3 class="wz-h3 mb-20">80g Form</h3>          <div class="row">            <div class="col-md-12">              <div class="donate-form">                <div class="form-row" >                  <div class="form-group col-md-6 mb-10" style="padding-bottom: 20px;">                    <input type="text" class="form-control donor-txt-box " formControlName="pancard_no" id="inputEmail4" placeholder="Pan Card Number" [ngClass]="{ \'is-invalid\': submittedgmForm && f4.pancard_no.errors }">                    <div *ngIf="submittedgmForm && f4.pancard_no.errors" class="invalid-feedback">                      <div *ngIf="f4.pancard_no.errors.required" class="errr-msg-white">This field is required</div>                      </div>                  </div>                  <div class="form-group col-md-6 mb-10" style="padding-bottom: 20px;">                    <input type="text" class="form-control donor-txt-box inp-backcolor" id="" formControlName="name"  placeholder="Name" [ngClass]="{ \'is-invalid\': submittedgmForm && f4.name.errors }">                    <div *ngIf="submittedgmForm && f4.name.errors" class="invalid-feedback errr-msg-white">                      <div *ngIf="f4.name.errors.required">This field is required</div>                      </div>                  </div>                  <div class="form-group col-md-6 mb-30 " style="padding-bottom: 20px;">                    <input type="text" class="form-control donor-txt-box inp-backcolor" id="" formControlName="phone_number"  placeholder="Phone Number" [ngClass]="{ \'is-invalid\': submittedgmForm && f4.phone_number.errors }">                    <div *ngIf="submittedgmForm && f4.phone_number.errors" class="invalid-feedback errr-msg-white">                      <div *ngIf="f4.phone_number.errors.required">This field is required</div>                      </div></div>                  <div class="form-group col-md-6 mb-20 " style="padding-bottom: 20px;">                      <button class="btn-wz-wt w-100" (click)="submit80gForm()" > Submit</button>                  </div>                </div>              </div>            </div>          </div>          <div>            <!-- <button mat-button matStepperPrevious class="btn-wz-wt">Back</button> -->            <!-- <button mat-button matStepperNext></button> -->          </div>        </form>    </div>  </div></div></div><div class="modal fade payed-modal" id="closeDonateModal" tabindex="-1" role="dialog" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered" role="document">    <div class="modal-content">      <div class="modal-body">        <div class="col-lg-12 col-lg-12">          <div class="row">            <div class="col-lg-12 col-md-12">              <div class="payd-msg">                <p class="mt-4">                  I Could Really Use Your Help Right Now.You Can Help Me with a Contribution As Small as ₹300.</p>                <div class="row">                  <div class="col-md-2 col-12"></div>                  <div class="col-md-4 col-12">                    <button class="f-btn-border" type="submit" data-dismiss="modal" >No, Thanks</button>                  </div>                  <div class="col-md-4 col-12">                    <button class="f-btn-border-red" type="submit">SureI\'ll Help</button>                  </div>                  <div class="col-md-2 col-12"></div>                </div>            </div>          </div>        </div>      </div>    </div>  </div></div></div></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AmlPolicyComponent', 'selector': 'app-aml-policy'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'app-campaign'},{'name': 'CancellationPolicyComponent', 'selector': 'app-cancellation-policy'},{'name': 'CheckoutComponent', 'selector': 'paytm-checkout'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DemoComponent', 'selector': 'app-demo'},{'name': 'DonateNowComponent', 'selector': 'app-donate-now'},{'name': 'DonateUserComponent', 'selector': 'app-donate-user'},{'name': 'EditFundraiserComponent', 'selector': 'app-edit-fundraiser'},{'name': 'EditLoanComponent', 'selector': 'app-edit-loan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FundRaiserComponent', 'selector': 'app-fund-raiser'},{'name': 'FundRaiserDetailComponent', 'selector': 'app-fund-raiser-detail'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HowItWorksComponent', 'selector': 'app-how-it-works'},{'name': 'LendComponent', 'selector': 'app-lend'},{'name': 'LoanDetailsComponent', 'selector': 'app-loan-details'},{'name': 'OurCampaignsComponent', 'selector': 'app-our-campaigns'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaytmComponent', 'selector': 'app-paytm'},{'name': 'PaytmPaymentComponent', 'selector': 'app-paytm-payment'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SearchListComponent', 'selector': 'app-search-list'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'StartFundraiserComponent', 'selector': 'app-start-fundraiser'},{'name': 'StatisticsComponent', 'selector': 'app-statistics'},{'name': 'TermsAndConditionsComponent', 'selector': 'app-terms-and-conditions'},{'name': 'VolunteerComponent', 'selector': 'app-volunteer'},{'name': 'WithdrawStartFundraiserComponent', 'selector': 'app-withdraw-start-fundraiser'}];
+    var DIRECTIVES = [{'name': 'DragDirective', 'selector': '[appDrag]'}];
+    var ACTUAL_COMPONENT = {'name': 'SearchListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,4395 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">ngo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Feature/home/home.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#amount" >amount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#bannerList" >bannerList</a>
+                            </li>
+                            <li>
+                                <a href="#baseUrl" >baseUrl</a>
+                            </li>
+                            <li>
+                                <a href="#baseUrl1" >baseUrl1</a>
+                            </li>
+                            <li>
+                                <a href="#campaignerList" >campaignerList</a>
+                            </li>
+                            <li>
+                                <a href="#campaignList" >campaignList</a>
+                            </li>
+                            <li>
+                                <a href="#category_id" >category_id</a>
+                            </li>
+                            <li>
+                                <a href="#certificate_address" >certificate_address</a>
+                            </li>
+                            <li>
+                                <a href="#certificate_name" >certificate_name</a>
+                            </li>
+                            <li>
+                                <a href="#certificate_pan" >certificate_pan</a>
+                            </li>
+                            <li>
+                                <a href="#certificate_phone" >certificate_phone</a>
+                            </li>
+                            <li>
+                                <a href="#clicked" >clicked</a>
+                            </li>
+                            <li>
+                                <a href="#customer_id" >customer_id</a>
+                            </li>
+                            <li>
+                                <a href="#customOptions" >customOptions</a>
+                            </li>
+                            <li>
+                                <a href="#customOptions1" >customOptions1</a>
+                            </li>
+                            <li>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                <a href="#dialogRef" >dialogRef</a>
+                            </li>
+                            <li>
+                                <a href="#donateNowForm" >donateNowForm</a>
+                            </li>
+                            <li>
+                                <a href="#donationAmount" >donationAmount</a>
+                            </li>
+                            <li>
+                                <a href="#eightygmForm" >eightygmForm</a>
+                            </li>
+                            <li>
+                                <a href="#facebook" >facebook</a>
+                            </li>
+                            <li>
+                                <a href="#firstFormGroup" >firstFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#formdata" >formdata</a>
+                            </li>
+                            <li>
+                                <a href="#fundraiserId" >fundraiserId</a>
+                            </li>
+                            <li>
+                                <a href="#fundRaiserList" >fundRaiserList</a>
+                            </li>
+                            <li>
+                                <a href="#gmformdata" >gmformdata</a>
+                            </li>
+                            <li>
+                                <a href="#infoStatus" >infoStatus</a>
+                            </li>
+                            <li>
+                                <a href="#instagram" >instagram</a>
+                            </li>
+                            <li>
+                                <a href="#key" >key</a>
+                            </li>
+                            <li>
+                                <a href="#length" >length</a>
+                            </li>
+                            <li>
+                                <a href="#linkedin" >linkedin</a>
+                            </li>
+                            <li>
+                                <a href="#loginToken" >loginToken</a>
+                            </li>
+                            <li>
+                                <a href="#modalReference" >modalReference</a>
+                            </li>
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                            <li>
+                                <a href="#orderId" >orderId</a>
+                            </li>
+                            <li>
+                                <a href="#orderResponse" >orderResponse</a>
+                            </li>
+                            <li>
+                                <a href="#raisedAmountInPercentage" >raisedAmountInPercentage</a>
+                            </li>
+                            <li>
+                                <a href="#RAZORPAY_OPTIONS" >RAZORPAY_OPTIONS</a>
+                            </li>
+                            <li>
+                                <a href="#razorpayResponse" >razorpayResponse</a>
+                            </li>
+                            <li>
+                                <a href="#rzppay" >rzppay</a>
+                            </li>
+                            <li>
+                                <a href="#searchinput" >searchinput</a>
+                            </li>
+                            <li>
+                                <a href="#secondFormGroup" >secondFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#show_donor_information" >show_donor_information</a>
+                            </li>
+                            <li>
+                                <a href="#showModal" >showModal</a>
+                            </li>
+                            <li>
+                                <a href="#socialMediaList" >socialMediaList</a>
+                            </li>
+                            <li>
+                                <a href="#sorting" >sorting</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Private</span>
+                                <a href="#stepper" >stepper</a>
+                            </li>
+                            <li>
+                                <a href="#submitted" >submitted</a>
+                            </li>
+                            <li>
+                                <a href="#submittedgmForm" >submittedgmForm</a>
+                            </li>
+                            <li>
+                                <a href="#twitter" >twitter</a>
+                            </li>
+                            <li>
+                                <a href="#url" >url</a>
+                            </li>
+                            <li>
+                                <a href="#whatsapp" >whatsapp</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#close80gForm" >close80gForm</a>
+                            </li>
+                            <li>
+                                <a href="#closeModal" >closeModal</a>
+                            </li>
+                            <li>
+                                <a href="#coureselSlider" >coureselSlider</a>
+                            </li>
+                            <li>
+                                <a href="#donAmount" >donAmount</a>
+                            </li>
+                            <li>
+                                <a href="#donatenowModal" >donatenowModal</a>
+                            </li>
+                            <li>
+                                <a href="#getComaignList" >getComaignList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getFundRaisers" >getFundRaisers</a>
+                            </li>
+                            <li>
+                                <a href="#getKey" >getKey</a>
+                            </li>
+                            <li>
+                                <a href="#googleTranslateElementInit" >googleTranslateElementInit</a>
+                            </li>
+                            <li>
+                                <a href="#next" >next</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#previous" >previous</a>
+                            </li>
+                            <li>
+                                <a href="#Settings" >Settings</a>
+                            </li>
+                            <li>
+                                <a href="#showinfo" >showinfo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f3" >f3</a>
+                                </li>
+                                <li>
+                                    <a href="#f2" >f2</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder, router: Router, apiService: <a href="../injectables/ApiService.html" target="_self">ApiService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, _formBuilder: FormBuilder, spinner: NgxSpinnerService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/app/Feature/home/home.component.ts:124</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>apiService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ApiService.html" target="_self" >ApiService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>spinner</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgxSpinnerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="close80gForm"></a>
+                    <span class="name">
+                        <span ><b>close80gForm</b></span>
+                        <a href="#close80gForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>close80gForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="317"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:317</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeModal"></a>
+                    <span class="name">
+                        <span ><b>closeModal</b></span>
+                        <a href="#closeModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="310"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:310</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="coureselSlider"></a>
+                    <span class="name">
+                        <span ><b>coureselSlider</b></span>
+                        <a href="#coureselSlider"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>coureselSlider()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="195"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:195</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donAmount"></a>
+                    <span class="name">
+                        <span ><b>donAmount</b></span>
+                        <a href="#donAmount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>donAmount(e)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="307"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:307</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>e</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donatenowModal"></a>
+                    <span class="name">
+                        <span ><b>donatenowModal</b></span>
+                        <a href="#donatenowModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>donatenowModal(id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="278"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:278</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getComaignList"></a>
+                    <span class="name">
+                        <span ><b>getComaignList</b></span>
+                        <a href="#getComaignList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getComaignList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="244"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:244</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFundRaisers"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getFundRaisers</b></span>
+                        <a href="#getFundRaisers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFundRaisers()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="228"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:228</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getKey"></a>
+                    <span class="name">
+                        <span ><b>getKey</b></span>
+                        <a href="#getKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getKey()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="165"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:165</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="googleTranslateElementInit"></a>
+                    <span class="name">
+                        <span ><b>googleTranslateElementInit</b></span>
+                        <a href="#googleTranslateElementInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>googleTranslateElementInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="274"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:274</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="next"></a>
+                    <span class="name">
+                        <span ><b>next</b></span>
+                        <a href="#next"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>next()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="265"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:265</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="150"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:150</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previous"></a>
+                    <span class="name">
+                        <span ><b>previous</b></span>
+                        <a href="#previous"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>previous()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="269"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:269</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Settings"></a>
+                    <span class="name">
+                        <span ><b>Settings</b></span>
+                        <a href="#Settings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>Settings()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="254"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:254</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showinfo"></a>
+                    <span class="name">
+                        <span ><b>showinfo</b></span>
+                        <a href="#showinfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showinfo(event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="297"
+                                    class="link-to-prism">src/app/Feature/home/home.component.ts:297</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="amount"></a>
+                    <span class="name">
+                        <span ><b>amount</b></span>
+                        <a href="#amount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/Feature/home/home.component.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bannerList"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>bannerList</b></span>
+                        <a href="#bannerList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/Feature/home/home.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="baseUrl"></a>
+                    <span class="name">
+                        <span ><b>baseUrl</b></span>
+                        <a href="#baseUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/Feature/home/home.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="baseUrl1"></a>
+                    <span class="name">
+                        <span ><b>baseUrl1</b></span>
+                        <a href="#baseUrl1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/Feature/home/home.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="campaignerList"></a>
+                    <span class="name">
+                        <span ><b>campaignerList</b></span>
+                        <a href="#campaignerList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/app/Feature/home/home.component.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="campaignList"></a>
+                    <span class="name">
+                        <span ><b>campaignList</b></span>
+                        <a href="#campaignList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/Feature/home/home.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="category_id"></a>
+                    <span class="name">
+                        <span ><b>category_id</b></span>
+                        <a href="#category_id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/Feature/home/home.component.ts:121</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="certificate_address"></a>
+                    <span class="name">
+                        <span ><b>certificate_address</b></span>
+                        <a href="#certificate_address"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/Feature/home/home.component.ts:116</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="certificate_name"></a>
+                    <span class="name">
+                        <span ><b>certificate_name</b></span>
+                        <a href="#certificate_name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/Feature/home/home.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="certificate_pan"></a>
+                    <span class="name">
+                        <span ><b>certificate_pan</b></span>
+                        <a href="#certificate_pan"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/app/Feature/home/home.component.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="certificate_phone"></a>
+                    <span class="name">
+                        <span ><b>certificate_phone</b></span>
+                        <a href="#certificate_phone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="117" class="link-to-prism">src/app/Feature/home/home.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clicked"></a>
+                    <span class="name">
+                        <span ><b>clicked</b></span>
+                        <a href="#clicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/Feature/home/home.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customer_id"></a>
+                    <span class="name">
+                        <span ><b>customer_id</b></span>
+                        <a href="#customer_id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/app/Feature/home/home.component.ts:113</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customOptions"></a>
+                    <span class="name">
+                        <span ><b>customOptions</b></span>
+                        <a href="#customOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OwlOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    //margin:10,
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 200,
+    autoplay:true,
+
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      },
+      940: {
+        items: 3
+    }
+  },
+    nav: true
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/Feature/home/home.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customOptions1"></a>
+                    <span class="name">
+                        <span ><b>customOptions1</b></span>
+                        <a href="#customOptions1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OwlOptions</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 200,
+    autoplay:true,
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    responsive: {
+      0: {
+        items: 1
+      },
+      // 400: {
+      //   items: 1
+      // },
+      // 740: {
+      //   items: 1
+      // },
+      // 767: {
+      //   items: 1
+      // },
+
+    },
+    nav: true
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/Feature/home/home.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/Feature/home/home.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialogRef"></a>
+                    <span class="name">
+                        <span ><b>dialogRef</b></span>
+                        <a href="#dialogRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/Feature/home/home.component.ts:109</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donateNowForm"></a>
+                    <span class="name">
+                        <span ><b>donateNowForm</b></span>
+                        <a href="#donateNowForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/Feature/home/home.component.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="donationAmount"></a>
+                    <span class="name">
+                        <span ><b>donationAmount</b></span>
+                        <a href="#donationAmount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/Feature/home/home.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="eightygmForm"></a>
+                    <span class="name">
+                        <span ><b>eightygmForm</b></span>
+                        <a href="#eightygmForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/Feature/home/home.component.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="facebook"></a>
+                    <span class="name">
+                        <span ><b>facebook</b></span>
+                        <a href="#facebook"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/Feature/home/home.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="firstFormGroup"></a>
+                    <span class="name">
+                        <span ><b>firstFormGroup</b></span>
+                        <a href="#firstFormGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/Feature/home/home.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formdata"></a>
+                    <span class="name">
+                        <span ><b>formdata</b></span>
+                        <a href="#formdata"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/Feature/home/home.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundraiserId"></a>
+                    <span class="name">
+                        <span ><b>fundraiserId</b></span>
+                        <a href="#fundraiserId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/Feature/home/home.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fundRaiserList"></a>
+                    <span class="name">
+                        <span ><b>fundRaiserList</b></span>
+                        <a href="#fundRaiserList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/Feature/home/home.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gmformdata"></a>
+                    <span class="name">
+                        <span ><b>gmformdata</b></span>
+                        <a href="#gmformdata"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/Feature/home/home.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="infoStatus"></a>
+                    <span class="name">
+                        <span ><b>infoStatus</b></span>
+                        <a href="#infoStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/Feature/home/home.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="instagram"></a>
+                    <span class="name">
+                        <span ><b>instagram</b></span>
+                        <a href="#instagram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/Feature/home/home.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="key"></a>
+                    <span class="name">
+                        <span ><b>key</b></span>
+                        <a href="#key"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/Feature/home/home.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="length"></a>
+                    <span class="name">
+                        <span ><b>length</b></span>
+                        <a href="#length"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/app/Feature/home/home.component.ts:124</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="linkedin"></a>
+                    <span class="name">
+                        <span ><b>linkedin</b></span>
+                        <a href="#linkedin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/Feature/home/home.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loginToken"></a>
+                    <span class="name">
+                        <span ><b>loginToken</b></span>
+                        <a href="#loginToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/Feature/home/home.component.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalReference"></a>
+                    <span class="name">
+                        <span ><b>modalReference</b></span>
+                        <a href="#modalReference"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/Feature/home/home.component.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;ngx sharebuttons&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/Feature/home/home.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderId"></a>
+                    <span class="name">
+                        <span ><b>orderId</b></span>
+                        <a href="#orderId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/Feature/home/home.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="orderResponse"></a>
+                    <span class="name">
+                        <span ><b>orderResponse</b></span>
+                        <a href="#orderResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/Feature/home/home.component.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="raisedAmountInPercentage"></a>
+                    <span class="name">
+                        <span ><b>raisedAmountInPercentage</b></span>
+                        <a href="#raisedAmountInPercentage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/app/Feature/home/home.component.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RAZORPAY_OPTIONS"></a>
+                    <span class="name">
+                        <span ><b>RAZORPAY_OPTIONS</b></span>
+                        <a href="#RAZORPAY_OPTIONS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &quot;key&quot;: &quot;&quot;,
+    &quot;amount&quot;: &quot;&quot;,
+    &quot;name&quot;: &quot;NGO&quot;,
+    &quot;currency&quot;:&quot;INR&quot;,
+    &quot;order_id&quot;: &quot;&quot;,
+    &quot;customer_id&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;App Payment&quot;,
+    &quot;image&quot;: &quot;https://livestatic.novopay.in/resources/img/nodeapp/img/Logo_NP.jpg&quot;,
+    &quot;prefill&quot;: {
+      &quot;name&quot;: &quot;&quot;,
+      &quot;email&quot;: &quot;test@test.com&quot;,
+      &quot;contact&quot;: &quot;&quot;,
+      &quot;method&quot;: &quot;&quot;
+    },
+    &quot;modal&quot;: {},
+    &quot;theme&quot;: {
+      &quot;color&quot;: &quot;#0096C5&quot;
+    },
+
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">src/app/Feature/home/home.component.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="razorpayResponse"></a>
+                    <span class="name">
+                        <span ><b>razorpayResponse</b></span>
+                        <a href="#razorpayResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/Feature/home/home.component.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rzppay"></a>
+                    <span class="name">
+                        <span ><b>rzppay</b></span>
+                        <a href="#rzppay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/Feature/home/home.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchinput"></a>
+                    <span class="name">
+                        <span ><b>searchinput</b></span>
+                        <a href="#searchinput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/app/Feature/home/home.component.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="secondFormGroup"></a>
+                    <span class="name">
+                        <span ><b>secondFormGroup</b></span>
+                        <a href="#secondFormGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/Feature/home/home.component.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="show_donor_information"></a>
+                    <span class="name">
+                        <span ><b>show_donor_information</b></span>
+                        <a href="#show_donor_information"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/Feature/home/home.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showModal"></a>
+                    <span class="name">
+                        <span ><b>showModal</b></span>
+                        <a href="#showModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/Feature/home/home.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="socialMediaList"></a>
+                    <span class="name">
+                        <span ><b>socialMediaList</b></span>
+                        <a href="#socialMediaList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/Feature/home/home.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sorting"></a>
+                    <span class="name">
+                        <span ><b>sorting</b></span>
+                        <a href="#sorting"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/app/Feature/home/home.component.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stepper"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Private</span>
+                        <span ><b>stepper</b></span>
+                        <a href="#stepper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatStepper</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;stepper&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/Feature/home/home.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitted"></a>
+                    <span class="name">
+                        <span ><b>submitted</b></span>
+                        <a href="#submitted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/Feature/home/home.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submittedgmForm"></a>
+                    <span class="name">
+                        <span ><b>submittedgmForm</b></span>
+                        <a href="#submittedgmForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/Feature/home/home.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="twitter"></a>
+                    <span class="name">
+                        <span ><b>twitter</b></span>
+                        <a href="#twitter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/Feature/home/home.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="url"></a>
+                    <span class="name">
+                        <span ><b>url</b></span>
+                        <a href="#url"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/Feature/home/home.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="whatsapp"></a>
+                    <span class="name">
+                        <span ><b>whatsapp</b></span>
+                        <a href="#whatsapp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/Feature/home/home.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f3"></a>
+                        <span class="name"><b>f3</b><a href="#f3"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f3()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="291" class="link-to-prism">src/app/Feature/home/home.component.ts:291</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f2"></a>
+                        <span class="name"><b>f2</b><a href="#f2"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f2()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="294" class="link-to-prism">src/app/Feature/home/home.component.ts:294</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiService } from &#x27;./../../core/service/api.service&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import * as _ from &#x27;lodash&#x27;;
+import  &#x27;jquery&#x27;;
+import { Router,ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { MatStepper } from &#x27;@angular/material/stepper&#x27;;
+import { AuthService } from &#x27;src/app/core/service/auth.service&#x27;;
+import { NgxSpinnerService } from &#x27;ngx-spinner&#x27;;
+import { OwlOptions } from &#x27;ngx-owl-carousel-o&#x27;;
+import { Slick } from &#x27;ngx-slickjs&#x27;;
+declare let Razorpay: any;
+declare var $:any
+declare var google:any;
+@Component({
+  selector: &#x27;app-home&#x27;,
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrls: [&#x27;./home.component.css&#x27;]
+})
+
+export class HomeComponent implements OnInit {
+  customOptions: OwlOptions &#x3D; {
+    //margin:10,
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 200,
+    autoplay:true,
+
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      },
+      940: {
+        items: 3
+    }
+  },
+    nav: true
+  }
+  customOptions1: OwlOptions &#x3D; {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 200,
+    autoplay:true,
+    navText: [&#x27;&#x27;, &#x27;&#x27;],
+    responsive: {
+      0: {
+        items: 1
+      },
+      // 400: {
+      //   items: 1
+      // },
+      // 740: {
+      //   items: 1
+      // },
+      // 767: {
+      //   items: 1
+      // },
+
+    },
+    nav: true
+  }
+
+    @ViewChild(&#x27;stepper&#x27;) private stepper: MatStepper;
+    fundRaiserList: any;
+    baseUrl: string;
+    baseUrl1:string;
+    campaignList: any;
+    public bannerList: any []&#x3D;[];
+    name &#x3D; &#x27;ngx sharebuttons&#x27;;
+    socialMediaList: any;
+    facebook: any;
+    instagram: any;
+    whatsapp: any;
+    linkedin: any;
+    twitter: any;
+    donateNowForm: any;
+    submitted: boolean;
+    clicked: boolean;
+    infoStatus: boolean;
+    show_donor_information: any;
+    donationAmount: any;
+    fundraiserId: any;
+    firstFormGroup: FormGroup;
+    secondFormGroup: FormGroup;
+    eightygmForm:FormGroup;
+    submittedgmForm: boolean;
+    url: string;
+    loginToken: any;
+    razorpayResponse: string;
+    orderId: any;
+    amount: any;
+    rzppay: any;
+    key: any;
+    showModal: boolean;
+    modalReference: any;
+    dialogRef: any;
+    orderResponse: any;
+    data: any;
+    formdata: any;
+    customer_id: any;
+    gmformdata: any;
+    certificate_name: any;
+    certificate_address: any;
+    certificate_phone: any;
+    certificate_pan: any;
+    searchinput: string;
+    sorting: string;
+    category_id: string;
+    campaignerList: any;
+  raisedAmountInPercentage: number;
+  length: any;
+  constructor( private fb: FormBuilder,private router: Router,private apiService: ApiService,
+     private authService:AuthService,private _formBuilder: FormBuilder,private spinner: NgxSpinnerService) {
+    //   setInterval(() &#x3D;&gt;{
+    //   this.getFundRaisers();
+    // },50000)
+    this.getFundRaisers();
+    this.infoStatus &#x3D; false;
+    this.show_donor_information &#x3D; 0;
+    this.firstFormGroup &#x3D; this._formBuilder.group({
+      amount: [&#x27;&#x27;,[Validators.required]],
+    });
+    this.secondFormGroup &#x3D; this._formBuilder.group({
+      name: [&#x27;&#x27;,[Validators.required]],
+      email: [&#x27;&#x27;, [Validators.required,Validators.pattern(&quot;[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$&quot;)]] ,
+      show_donor_information: [&#x27;&#x27;],
+
+    });
+    this.eightygmForm &#x3D; this._formBuilder.group({
+      pancard_no:  [&#x27;&#x27;,[Validators.required,Validators.pattern(&quot;[A-Z]{5}[0-9]{4}[A-Z]{1}&quot;)]] ,
+      name:  [&#x27;&#x27;,[Validators.required]],
+      phone_number:  [&#x27;&#x27;,[Validators.required]],
+      address:  [&#x27;&#x27;,[Validators.required]],
+    });
+   }
+
+  ngOnInit(): void {
+    setTimeout(() &#x3D;&gt; {
+      // $(&#x27;#alert-modal&#x27;).modal(&#x27;show&#x27;);
+
+    }, 5000);
+      this.coureselSlider();
+      $(&#x27;html, body&#x27;).animate({ scrollTop: 0 }, &#x27;fast&#x27;);
+    this.getComaignList();
+    setInterval(() &#x3D;&gt;{
+    this.getComaignList();
+    },50000)
+    this.Settings();
+    //  this.Wizardmodal();
+    this.donationAmount &#x3D; 1000;
+  }
+  getKey(){
+    this.apiService.getPaymentkey(this.fundraiserId).subscribe((res:any)&#x3D;&gt;{
+      //console.log(res)
+     this.key &#x3D; res.apiKey;
+     this.customer_id &#x3D; res.customerId;
+    // console.log(this.customer_id)
+    })
+  }
+  RAZORPAY_OPTIONS &#x3D; {
+    &quot;key&quot;: &quot;&quot;,
+    &quot;amount&quot;: &quot;&quot;,
+    &quot;name&quot;: &quot;NGO&quot;,
+    &quot;currency&quot;:&quot;INR&quot;,
+    &quot;order_id&quot;: &quot;&quot;,
+    &quot;customer_id&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;App Payment&quot;,
+    &quot;image&quot;: &quot;https://livestatic.novopay.in/resources/img/nodeapp/img/Logo_NP.jpg&quot;,
+    &quot;prefill&quot;: {
+      &quot;name&quot;: &quot;&quot;,
+      &quot;email&quot;: &quot;test@test.com&quot;,
+      &quot;contact&quot;: &quot;&quot;,
+      &quot;method&quot;: &quot;&quot;
+    },
+    &quot;modal&quot;: {},
+    &quot;theme&quot;: {
+      &quot;color&quot;: &quot;#0096C5&quot;
+    },
+
+  }
+
+  coureselSlider(){
+    setTimeout(function(){
+      $(&#x27;.custom1&#x27;).owlCarousel({
+      loop:true,
+      infinte:true,
+      nav:true,
+      navSpeed: 200,
+      autoplay:true,
+      navText: [&quot;&lt;i class&#x3D;&#x27;fa fa-angle-left&#x27;&gt;&lt;/i&gt;&quot;, &quot;&lt;i class&#x3D;&#x27;fa fa-angle-right&#x27;&gt;&lt;/i&gt;&quot;],
+      dots:false,
+      items:3,
+      autoplayHoverPause:true,
+      responsive:{
+        0:{
+            items:1,
+            dots:false,
+        },
+        768:{
+            items:2,
+            dots:false,
+        },
+        1200:{
+            items:3,
+
+        }
+    }
+
+      }
+      );
+    },4000);
+
+  }
+
+  async getFundRaisers(){
+    await this.apiService.getFundraiserForBanners().subscribe((res:any)&#x3D;&gt;{
+      this.fundRaiserList &#x3D; res[&#x27;list&#x27;];
+      this.length&#x3D;this.fundRaiserList.length;
+     // console.log(&#x27;this.length&#x27;,this.length)
+      this.baseUrl &#x3D; res.baseUrl
+        var sortList &#x3D;this.fundRaiserList.sort(function(a, b){
+          var aa &#x3D; new Date(a.closing_date),
+              bb &#x3D; new Date(b.closing_date);
+          return aa &lt; bb ? -1 : (aa &gt; bb ? 1 : 0);
+          });
+          this.bannerList &#x3D; _.slice(sortList, 0,3);
+        //  console.log(this.bannerList)
+    })
+}
+
+getComaignList(){
+  this.apiService.getCampaignList().subscribe((res:any)&#x3D;&gt;{
+    // this.coureselSlider(
+    //  console.log(&#x27;camp&#x27;,res[&#x27;list&#x27;]);
+    this.campaignList &#x3D; res[&#x27;list&#x27;];
+    this.baseUrl1 &#x3D; res.baseUrl;
+  }, error &#x3D;&gt; {
+    // this.toastr.error(error.error.message);
+  })
+}
+Settings(){
+  this.apiService.settings().subscribe((res:any)&#x3D;&gt;{
+    this.socialMediaList &#x3D; res[&#x27;list&#x27;];
+    this.facebook&#x3D; this.socialMediaList[0].facebook;
+    this.instagram&#x3D; this.socialMediaList[0].instagram;
+    this.whatsapp&#x3D;this.socialMediaList[0].whatsapp;
+    this.linkedin&#x3D;this.socialMediaList[0].linkedin;
+    this.twitter&#x3D;this.socialMediaList[0].twitter;
+
+  })
+}
+next(){
+  $(&quot;.owl-next&quot;).click();
+
+}
+previous(){
+  $(&quot;.owl-prev&quot;).click();
+
+}
+
+ googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: &#x27;en&#x27;}, &#x27;google_translate_element&#x27;);
+}
+
+donatenowModal(id){
+  if(localStorage.getItem(&quot;LoginToken&quot;)){
+    $(&#x27;#wizard-up-modal&#x27;).modal(&#x27;show&#x27;);
+    this.stepper.selectedIndex &#x3D; 0;
+    this.submittedgmForm &#x3D; false;
+    this.fundraiserId &#x3D; id;
+    this.getKey();
+  }
+  else if(localStorage.getItem(&quot;LoginToken&quot;) &#x3D;&#x3D;&#x3D; null){
+    $(&#x27;#sign-in-modal&#x27;).modal(&#x27;show&#x27;);
+  }
+
+}
+get f3() {
+  return this.eightygmForm.controls;
+}
+get f2() {
+  return this.secondFormGroup.controls;
+}
+showinfo(event){
+this.infoStatus &#x3D; event.target.checked;
+if(this.infoStatus &#x3D;&#x3D;&#x3D; true){
+  this.show_donor_information &#x3D; 1;
+}
+else{
+  this.show_donor_information &#x3D; 0;
+
+}
+}
+donAmount(e){
+  this.donationAmount &#x3D; e.target.outerText;
+}
+closeModal(){
+  $(&#x27;#wizard-up-modal&#x27;).modal(&#x27;hide&#x27;);
+  setTimeout(() &#x3D;&gt; {
+    $(&#x27;#closeDonateModal&#x27;).modal(&#x27;show&#x27;);
+
+  }, 200);
+}
+close80gForm(){
+  $(&#x27;#80gmFormmodal&#x27;).modal(&#x27;hide&#x27;);
+  setTimeout(() &#x3D;&gt; {
+    $(&#x27;#closeDonateModal&#x27;).modal(&#x27;show&#x27;);
+  }, 200);
+  $(&#x27;#closeDonateModal&#x27;).modal(&#x27;show&#x27;);
+}
+
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+
+&lt;!-- slider area --&gt;
+
+
+
+
+&lt;div id&#x3D;&quot;carouselExampleIndicators&quot; class&#x3D;&quot;carousel slide&quot; data-ride&#x3D;&quot;carousel&quot; data-pause&#x3D;&quot;false&quot;&gt;
+	&lt;ol class&#x3D;&quot;carousel-indicators&quot;&gt;
+	  &lt;li data-target&#x3D;&quot;#carouselExampleIndicators&quot; data-slide-to&#x3D;&quot;0&quot; class&#x3D;&quot;active&quot;&gt;&lt;/li&gt;
+	  &lt;li data-target&#x3D;&quot;#carouselExampleIndicators&quot; data-slide-to&#x3D;&quot;1&quot;&gt;&lt;/li&gt;
+	  &lt;li data-target&#x3D;&quot;#carouselExampleIndicators&quot; data-slide-to&#x3D;&quot;2&quot;&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;div class&#x3D;&quot;carousel-inner&quot;&gt;
+
+	  &lt;div class&#x3D;&quot;carousel-item active&quot;&gt;
+		&lt;div class&#x3D;&quot;banner&quot; style&#x3D;&quot;background-image: url(&#x27;assets/images/slider/slider-1.jpg&#x27;)&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;carousel-caption d-none d-md-block&quot;&gt;
+		   &lt;h3 class&#x3D;&quot;&quot; style&#x3D;&quot;color:#fff&quot;&gt;Be The Light of HOPE&lt;/h3&gt;
+		   &lt;!-- &lt;h2 class&#x3D;&quot;&quot;&gt;PSD TO HTML&lt;/h2&gt;
+		   &lt;h3 class&#x3D;&quot;&quot;&gt;BOOTSTRAP&lt;/h3&gt; --&gt;
+		 &lt;/div&gt;
+	  &lt;/div&gt;
+	  
+
+	  &lt;div class&#x3D;&quot;carousel-item &quot;&gt;
+		&lt;div class&#x3D;&quot;banner&quot; style&#x3D;&quot;background-image: url(&#x27;assets/images/slider/slider-2.jpg&#x27;);background-size: cover;background-repeat: no-repeat;&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;carousel-caption d-none d-md-block&quot;&gt;
+			&lt;h3 class&#x3D;&quot;&quot; style&#x3D;&quot;color:#fff&quot;&gt;Give them a chance.&lt;/h3&gt;
+			&lt;!-- &lt;h2 class&#x3D;&quot;&quot;&gt;PSD TO HTML&lt;/h2&gt;
+			&lt;h3 class&#x3D;&quot;&quot;&gt;BOOTSTRAP&lt;/h3&gt; --&gt;
+		&lt;/div&gt;
+	  &lt;/div&gt;
+
+
+	  &lt;div class&#x3D;&quot;carousel-item &quot;&gt;
+		&lt;div class&#x3D;&quot;banner&quot; style&#x3D;&quot;background-image: url(&#x27;assets/images/slider/slider-3.jpg&#x27;)&quot;&gt;&lt;/div&gt;
+		&lt;div class&#x3D;&quot;carousel-caption d-none d-md-block&quot;&gt;
+		  &lt;h3 class&#x3D;&quot;&quot; style&#x3D;&quot;color:#fff&quot;&gt;Giving is the greatest act of Grace &lt;/h3&gt;
+		  &lt;!-- &lt;h2 class&#x3D;&quot;&quot;&gt;PSD TO HTML&lt;/h2&gt;
+		  &lt;h3 class&#x3D;&quot;&quot;&gt;BOOTSTRAP&lt;/h3&gt; --&gt;
+		 &lt;/div&gt;
+	  &lt;/div&gt;
+	 
+
+	  
+
+	&lt;/div&gt;
+
+
+	&lt;a class&#x3D;&quot;carousel-control-prev&quot; href&#x3D;&quot;#carouselExampleIndicators&quot; role&#x3D;&quot;button&quot; data-slide&#x3D;&quot;prev&quot;&gt;
+	  &lt;span class&#x3D;&quot;carousel-control-prev-icon&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
+	  &lt;span class&#x3D;&quot;sr-only&quot;&gt;Previous&lt;/span&gt;
+	&lt;/a&gt;
+	&lt;a class&#x3D;&quot;carousel-control-next&quot; href&#x3D;&quot;#carouselExampleIndicators&quot; role&#x3D;&quot;button&quot; data-slide&#x3D;&quot;next&quot;&gt;
+	  &lt;span class&#x3D;&quot;carousel-control-next-icon&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/span&gt;
+	  &lt;span class&#x3D;&quot;sr-only&quot;&gt;Next&lt;/span&gt;
+	&lt;/a&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;!-- 
+&lt;div class&#x3D;&quot;index-banner&quot; style&#x3D;&quot;background-image: url(&#x27;assets/images/slider/slider-1.jpg&#x27;); &quot;&gt;
+	&lt;div id&#x3D;&quot;carousel&quot; class&#x3D;&quot;carousel slide carousel-fade&quot; data-ride&#x3D;&quot;carousel&quot;&gt;
+		&lt;ol class&#x3D;&quot;carousel-indicators&quot;&gt;
+			&lt;li data-target&#x3D;&quot;#carousel&quot; data-slide-to&#x3D;&quot;0&quot; class&#x3D;&quot;active&quot;&gt;&lt;/li&gt;
+			&lt;li data-target&#x3D;&quot;#carousel&quot; data-slide-to&#x3D;&quot;1&quot;&gt;&lt;/li&gt;
+			&lt;li data-target&#x3D;&quot;#carousel&quot; data-slide-to&#x3D;&quot;2&quot;&gt;&lt;/li&gt;
+
+		&lt;/ol&gt;
+		&lt;div class&#x3D;&quot;carousel-inner&quot;&gt;
+			&lt;div class&#x3D;&quot;carousel-item &quot; *ngFor&#x3D;&quot;let item of bannerList, let i &#x3D; index&quot; [class]&#x3D;&quot;(i &#x3D;&#x3D;&#x3D; 0) ? &#x27;active&#x27; : &#x27;inactive&#x27;&quot;&gt;
+				&lt;!-- &lt;div class&#x3D;&quot;overlay-banner&quot;&gt;
+					&lt;img class&#x3D;&quot;img-fluid img-overlay slider-img&quot; src&#x3D;&quot;assets/images/slider/slider-1.jpg&quot; width&#x3D;&quot;100%&quot;&gt;
+				&lt;/div&gt; --
+        &lt;div class&#x3D;&quot;index-caption&quot;&gt;
+					&lt;h3 class&#x3D;&quot;animated fadeInDown slider-cap cursr-none&quot;&gt;{{item.title}}&lt;/h3&gt;
+					&lt;p class&#x3D;&quot;animated fadeInUp slider-p cursr-none&quot;&gt; {{item.story.length&gt;70 ? (item.story | slice:0:70)+&#x27;..&#x27;:(item.story)}}&lt;/p&gt;
+          -- &lt;button type&#x3D;&quot;&quot; class&#x3D;&quot;donation&quot; style&#x3D;&quot;width:170px&quot; routerLink&#x3D;&quot;/fund-raiser-detail/{{item.id}}&quot;&gt;&lt;i class&#x3D;&quot;fa fa-heart&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt; &amp;nbsp;Donate To NGO&lt;/button&gt; --
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+
+		&lt;/div&gt;
+		&lt;a class&#x3D;&quot;carousel-control left&quot; href&#x3D;&quot;#carousel&quot; data-slide&#x3D;&quot;prev&quot;&gt;&lt;/a&gt;
+		&lt;a class&#x3D;&quot;carousel-control right&quot; href&#x3D;&quot;#carousel&quot; data-slide&#x3D;&quot;next&quot;&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt; --&gt;
+
+
+&lt;!-- &lt;div class&#x3D;&quot;sec-views&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div class&#x3D;&quot;view-div-bar&quot;&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-md-12 col-lg-12&quot;&gt;
+					&lt;div class&#x3D;&quot;view-div&quot;&gt;
+						&lt;div class&#x3D;&quot;view-list&quot;&gt;
+							&lt;h3&gt;Donate now&lt;/h3&gt;
+							&lt;p&gt;Sposoring the education of 6 &lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;view-div&quot;&gt;
+						&lt;div class&#x3D;&quot;view-list&quot;&gt;
+							&lt;h3&gt;Donate now&lt;/h3&gt;
+							&lt;p&gt;Sposoring the education of 6 &lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;view-div&quot;&gt;
+						&lt;div class&#x3D;&quot;view-list&quot;&gt;
+							&lt;h3&gt;Donate now&lt;/h3&gt;
+							&lt;p&gt;Sposoring the education of 6&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;view-div&quot;&gt;
+						&lt;div class&#x3D;&quot;view-list&quot;&gt;
+							&lt;h3&gt;Donate now&lt;/h3&gt;
+							&lt;p&gt;Sposoring the education of 6 &lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;view-div&quot;&gt;
+						&lt;div class&#x3D;&quot;view-list&quot;&gt;
+							&lt;h3&gt;Donate now&lt;/h3&gt;
+							&lt;p&gt;Sposoring the education of 6&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt; --&gt;
+
+
+&lt;section class&#x3D;&quot;section-scheme&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div class&#x3D;&quot;row align-items-center&quot;&gt;
+			&lt;div class&#x3D;&quot;col-md-6 col-8&quot;&gt;
+				&lt;div class&#x3D;&quot;page-lbar&quot;&gt;
+					&lt;h2 class&#x3D;&quot;left-header cursr-none&quot;&gt;Our Fundraisers Scheme&lt;/h2&gt;
+					&lt;!-- &lt;li class&#x3D;&quot;left-hd-list&quot;&gt;hidden in the middle of text.&lt;/li&gt; --&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-md-6 col-4 text-right&quot; *ngIf&#x3D;&quot;this.length&gt;3&quot;&gt;
+        &lt;!-- &lt;div class&#x3D;&quot;scheme-icon-left&quot; (click)&#x3D;&quot;slickController.prev()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;scheme-icon-right&quot; (click)&#x3D;&quot;slickController.next()&quot; &gt;&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/div&gt; --&gt;
+        &lt;div class&#x3D;&quot;scheme-icon-left&quot; (click)&#x3D;&quot;previous()&quot;&gt;&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;scheme-icon-right&quot; (click)&#x3D;&quot;next()&quot;  &gt;&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+            &lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;this.length&#x3D;&#x3D;1&quot;&gt;
+		
+			&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+		      &lt;owl-carousel-o [options]&#x3D;&quot;customOptions&quot;&gt;
+              &lt;ng-template carouselSlide *ngFor&#x3D;&quot;let item of fundRaiserList&quot;&gt;
+                
+                  &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+                    &lt;img src&#x3D;&quot;{{baseUrl}}{{item.image_url}}&quot; style&#x3D;&quot;cursor: pointer;&quot; class&#x3D;&quot;img-fluid img-new&quot; routerLink&#x3D;&quot;/fund-raiser-detail/{{item.id}}&quot; &gt;
+                    &lt;div class&#x3D;&quot;scheme-subject&quot;&gt;
+                      &lt;h5 class&#x3D;&quot;h3-txt&quot;&gt;{{item.title.length&gt;70 ? (item.title | slice:0:70)+&#x27;..&#x27;:(item.title)}}&lt;/h5&gt;
+                      &lt;span&gt;₹{{item.fund_raised}}&lt;/span&gt; raised out of &lt;span&gt;₹{{item.fund_required}}&lt;/span&gt;
+                      &lt;div class&#x3D;&quot;progress mb-2&quot; style&#x3D;&quot;height: 5px;&quot;&gt;
+                        &lt;!-- &lt;div class&#x3D;&quot;progress-bar progress-bar-red&quot; role&#x3D;&quot;progressbar&quot; style&#x3D;&quot;width:{{raisedAmountInPercentage}}%&quot; aria-valuenow&#x3D;&quot;25&quot; aria-valuemin&#x3D;&quot;0&quot; aria-valuemax&#x3D;&quot;100&quot;&gt;&lt;/div&gt; --&gt;
+                        &lt;div class&#x3D;&quot;progress-bar progress-bar-red&quot; role&#x3D;&quot;progressbar&quot; style&#x3D;&quot;width:{{item.fund_raised*100/item.fund_required}}%&quot; aria-valuenow&#x3D;&quot;25&quot; aria-valuemin&#x3D;&quot;0&quot; aria-valuemax&#x3D;&quot;100&quot;&gt;&lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;social-link&quot;&gt;
+                        &lt;li class&#x3D;&quot;mt-1 cursr-pointer&quot;&gt;share now&lt;/li&gt;
+                        &lt;share-buttons [theme]&#x3D;&quot;&#x27;modern-dark&#x27;&quot;
+                        [include]&#x3D;&quot;[&#x27;facebook&#x27;,&#x27;twitter&#x27;,&#x27;linkedin&#x27;,&#x27;whatsapp&#x27;]&quot;
+                        [show]&#x3D;&quot;4&quot;
+                        [size]&#x3D;&quot;1&quot;
+                        [url]&#x3D;&quot;&#x27;https://crowdworksindia.org/#/fund-raiser-detail/&#x27; + item.id&quot;
+                        [description]&#x3D;&quot;story&quot;
+                        [image] &#x3D;&quot;&#x27;https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg&#x27;&quot;
+                        [autoSetMeta]&#x3D;&quot;false&quot;
+                        &gt;&lt;/share-buttons&gt;
+                      &lt;/div&gt;
+                      &lt;a href&#x3D;&quot;&quot; routerLink&#x3D;&quot;/fund-raiser-detail/{{item.id}}&quot;&gt;&lt;i class&#x3D;&quot;fa fa-heart&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;Donate Now&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                
+              &lt;/ng-template&gt;
+            &lt;/owl-carousel-o&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+   
+		&lt;div class&#x3D;&quot;row&quot; *ngIf&#x3D;&quot;this.length&gt;1&quot;&gt;
+		
+			&lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+		      &lt;owl-carousel-o [options]&#x3D;&quot;customOptions&quot;&gt;
+              &lt;ng-template carouselSlide *ngFor&#x3D;&quot;let item of fundRaiserList&quot;&gt;
+                &lt;div&gt;
+                  &lt;div class&#x3D;&quot;col&quot;&gt;
+                    &lt;img src&#x3D;&quot;{{baseUrl}}{{item.image_url}}&quot; style&#x3D;&quot;cursor: pointer;&quot; class&#x3D;&quot;img-fluid img-new&quot; routerLink&#x3D;&quot;/fund-raiser-detail/{{item.id}}&quot; &gt;
+                    &lt;div class&#x3D;&quot;scheme-subject&quot;&gt;
+                      &lt;h5 class&#x3D;&quot;h3-txt&quot;&gt;{{item.title.length&gt;70 ? (item.title | slice:0:70)+&#x27;..&#x27;:(item.title)}}&lt;/h5&gt;
+                      &lt;span&gt;₹{{item.fund_raised}}&lt;/span&gt; raised out of &lt;span&gt;₹{{item.fund_required}}&lt;/span&gt;
+                      &lt;div class&#x3D;&quot;progress mb-2&quot; style&#x3D;&quot;height: 5px;&quot;&gt;
+                        &lt;!-- &lt;div class&#x3D;&quot;progress-bar progress-bar-red&quot; role&#x3D;&quot;progressbar&quot; style&#x3D;&quot;width:{{raisedAmountInPercentage}}%&quot; aria-valuenow&#x3D;&quot;25&quot; aria-valuemin&#x3D;&quot;0&quot; aria-valuemax&#x3D;&quot;100&quot;&gt;&lt;/div&gt; --&gt;
+                        &lt;div class&#x3D;&quot;progress-bar progress-bar-red&quot; role&#x3D;&quot;progressbar&quot; style&#x3D;&quot;width:{{item.fund_raised*100/item.fund_required}}%&quot; aria-valuenow&#x3D;&quot;25&quot; aria-valuemin&#x3D;&quot;0&quot; aria-valuemax&#x3D;&quot;100&quot;&gt;&lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;div class&#x3D;&quot;social-link&quot;&gt;
+                        &lt;li class&#x3D;&quot;mt-1 cursr-pointer&quot;&gt;share now&lt;/li&gt;
+                        &lt;share-buttons [theme]&#x3D;&quot;&#x27;modern-dark&#x27;&quot;
+                        [include]&#x3D;&quot;[&#x27;facebook&#x27;,&#x27;twitter&#x27;,&#x27;linkedin&#x27;,&#x27;whatsapp&#x27;]&quot;
+                        [show]&#x3D;&quot;4&quot;
+                        [size]&#x3D;&quot;1&quot;
+                        [url]&#x3D;&quot;&#x27;https://crowdworksindia.org/#/fund-raiser-detail/&#x27; + item.id&quot;
+                        [description]&#x3D;&quot;story&quot;
+                        [image] &#x3D;&quot;&#x27;https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg&#x27;&quot;
+                        [autoSetMeta]&#x3D;&quot;false&quot;
+                        &gt;&lt;/share-buttons&gt;
+                      &lt;/div&gt;
+                      &lt;a href&#x3D;&quot;&quot; routerLink&#x3D;&quot;/fund-raiser-detail/{{item.id}}&quot;&gt;&lt;i class&#x3D;&quot;fa fa-heart&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;Donate Now&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/ng-template&gt;
+            &lt;/owl-carousel-o&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class&#x3D;&quot;section-campaigns campaigns-bc&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-12&quot;&gt;
+				&lt;div class&#x3D;&quot;page-hd cursr-none&quot;&gt;
+					&lt;h2 class&#x3D;&quot;txt-white&quot;&gt;Our campaigns&lt;/h2&gt;
+					&lt;li class&#x3D;&quot;txt-white&quot;&gt;Please select the category that you want to donate.&lt;/li&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-md-12 col-12&quot;&gt;
+				&lt;div class&#x3D;&quot;row&quot;&gt;
+					&lt;div class&#x3D;&quot;col-md-3&quot; *ngFor&#x3D;&quot;let item of campaignList&quot; style&#x3D;&quot;cursor: pointer;&quot; &gt;
+						&lt;div class&#x3D;&quot;camp-div camp-hvr&quot; routerLink&#x3D;&quot;/campaign/{{item.id}}&quot;&gt;
+							&lt;div class&#x3D;&quot;camp-img&quot;&gt;
+                &lt;img src&#x3D;&quot;{{baseUrl1}}{{item.icon_url}}&quot;  class&#x3D;&quot;img-fluid&quot; &gt;&lt;/div&gt;
+							&lt;div class&#x3D;&quot;cmp-div-p&quot;&gt;
+								&lt;p&gt;{{item.title}}&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class&#x3D;&quot;section-supports cursr-none&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot; style&#x3D;&quot;padding: 45px 10px 0px 10px;&quot;&gt;
+			&lt;div class&#x3D;&quot;col-12&quot;&gt;
+				&lt;div class&#x3D;&quot;page-hd&quot;&gt;
+					&lt;h2&gt;why crowd works india foundation?&lt;/h2&gt;
+					&lt;!-- &lt;li&gt;Lorem Ipsum.&lt;/li&gt; --&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-md-11 col-12 ml-auto mr-auto&quot;&gt;
+				&lt;div class&#x3D;&quot;row&quot;&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/industry.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+								&lt;p&gt;Industry best fundrasing sucess rate&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/supported.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+								&lt;p&gt;Supported by donors&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/easy-manage.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+								&lt;p&gt;Easy to manage tools to boost result&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/payment.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+								&lt;p&gt;Received donation via all popular payment modes&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/ge-experts.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+								&lt;p&gt;Get experts support 24*7&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/dashboard.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+									&lt;p&gt;A dedicated smart dashboard&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/withdraw.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+								&lt;p&gt;Withdraw fund without hassle&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class&#x3D;&quot;col-md-3 col-lg-3 col-sm-6 col-7 mx-auto&quot;&gt;
+						&lt;div class&#x3D;&quot;supports-div&quot;&gt;
+							&lt;img src&#x3D;&quot;assets/images/supports/international.png&quot; class&#x3D;&quot;img-fluid crowd-image&quot;&gt;
+							&lt;div class&#x3D;&quot;sup-div-p&quot;&gt;
+								&lt;p&gt;International payment support&lt;/p&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class&#x3D;&quot;section-media&quot;&gt;
+	&lt;div class&#x3D;&quot;container&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-md-12&quot; style&#x3D;&quot;cursor: pointer;&quot;&gt;
+        &lt;a href&#x3D;&quot;https://{{facebook}}&quot; target&#x3D;&quot;_blank&quot; &gt;
+				&lt;div class&#x3D;&quot;media-li gn-Fb&quot;&gt;
+					&lt;img src&#x3D;&quot;assets/images/media/facebook-02.png&quot;&gt;
+					&lt;p&gt;Facebook&lt;/p&gt;
+				&lt;/div&gt;
+      &lt;/a&gt;
+      &lt;a href&#x3D;&quot;https://{{instagram}}&quot; target&#x3D;&quot;_blank&quot; &gt;
+				&lt;div class&#x3D;&quot;media-li gn-In&quot;&gt;
+					&lt;img src&#x3D;&quot;assets/images/media/instagram-02.png&quot;&gt;
+					&lt;p&gt;instagram&lt;/p&gt;
+				&lt;/div&gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;https://{{whatsapp}}&quot; target&#x3D;&quot;_blank&quot; &gt;
+				&lt;div class&#x3D;&quot;media-li gn-Wp&quot;&gt;
+					&lt;img src&#x3D;&quot;assets/images/media/whatsapp-02.png&quot;&gt;
+					&lt;p&gt;whatsapp&lt;/p&gt;
+				&lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;https://{{linkedin}}&quot; target&#x3D;&quot;_blank&quot; &gt;
+				&lt;div class&#x3D;&quot;media-li gn-Ln&quot;&gt;
+					&lt;img src&#x3D;&quot;assets/images/media/linkedin-02.png&quot;&gt;
+					&lt;p&gt;linkedin&lt;/p&gt;
+				&lt;/div&gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;https://{{twitter}}&quot; target&#x3D;&quot;_blank&quot; &gt;
+				&lt;div class&#x3D;&quot;media-li gn-Tw&quot;&gt;
+					&lt;img src&#x3D;&quot;assets/images/media/twiter-02.png&quot;&gt;
+					&lt;p&gt;Twitter&lt;/p&gt;
+				&lt;/div&gt;
+        &lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./home.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.carousel-inner .carousel-item{
+	height: 100vh !important;
+}
+.banner{
+	height: 100vh;
+	background-position: center;
+  
+}
+.main-menu-logo{
+	position: fixed;
+	top:0;
+	z-index: 100;
+	width: 100%;
+	background: #b1b1b14f;
+}
+.navbar-brand{
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff !important;
+}
+.nav-item a{
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 0px 20px !important;
+	color: #fff !important;
+}
+.nav-item a:hover{
+	color: #000 !important;
+}
+.carousel-caption{
+	bottom: 40%;
+	display: block !important;
+}
+.carousel-caption h1{
+	font-size: 100px;
+	letter-spacing: 2px;
+	color:  #ffb221;
+ 
+}
+.carousel-caption h2{
+	font-size: 80px;
+	letter-spacing: 2px;
+	color:  #24fbfd;
+}
+.carousel-caption h3{
+	font-size: 60px;
+	letter-spacing: 2px;
+	color:  #c49dff;
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+  .carousel-caption{
+    bottom: 30%;
+    display: block !important;
+  }
+  
+  .carousel-caption h1{
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
+  .carousel-caption h2{
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .carousel-caption h3{
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-control:focus{border-color: #dc3545;;  box-shadow: none; -webkit-box-shadow: none;}
+.has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+
+.inp-backcolor{
+  background-color: transparent;
+  color: white;
+
+}
+.slider-img{
+  max-height: 570px;
+  object-fit: cover;
+
+}
+@media only screen and  (max-width: 600px){
+  .slider-img{
+    max-height: 250px;
+    object-fit: cover;
+
+  }
+
+}
+::ng-deep .slick-dots{
+  display: none !important;
+}
+::ng-deep .owl-nav{
+  display: none !important;
+}
+.img-div{
+  max-height: 250px;
+  min-height: 250px;
+}
+.img-new{
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+
+}
+::ng-deep  .sb-button{
+  width: 37px;
+    margin: 0px 0px 10px 0px;
+    padding: 5px 0px 0px 0px;
+    display: inline-block !important;
+}
+::ng-deep .sb-facebook{
+  background-color: #4267B2;
+  color: white;
+  height: 25px;
+
+
+  }
+  ::ng-deep .sb-twitter{
+    background-color:#00acee;
+    color: white;
+    height: 25px;
+
+
+    }
+    ::ng-deep .sb-linkedin{
+      background-color: #00acee;
+      color: white;
+      height: 25px;
+
+
+      }
+      ::ng-deep .sb-whatsapp{
+        background-color: #4FCE5D;
+        color: white;
+        height: 25px;
+
+        }
+
+    ::ng-deep .sb-wrapper {
+      font-family: &#x27;Roboto&#x27;, sans-serif;
+      color: #fff;
+      border-radius: 2px;
+      box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+      transition: background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .share-btn &gt; a {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 12px;
+    font-family: Verdana, Arial;
+}
+.share-btn &gt; a:hover {
+    cursor: pointer;
+}
+
+.camp-hvr:hover {
+  background-color: #32374a;
+}
+.camp-hvr:hover p {
+color: white;
+}
+.campaign-img{
+  display: flex;
+  height: 225px;
+}
+
+.campaign-img img{
+  flex-shrink: 63;
+    min-width: 100%;
+    min-height: 250px;
+    max-height: 250px;
+    object-fit: cover;
+    align-items: center;
+}
+
+
+/* // donate now wizard */
+
+.wizard-tab-modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+}
+.wizard-tab-modal.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 99999;
+}
+.wizard-tab-modal .modal-header .close{
+  padding: 0px;
+  margin: 0rem 1rem -1rem auto;
+}
+.wizard-tab-modal .modal-dialog {
+  max-width: 50%;
+}
+.wizard-tab-modal .modal-content {
+  border-radius: 0;
+  min-height: 300px;
+  overflow: auto;
+  border-radius: 0px;
+  background-color: #32374a;
+  background: linear-gradient(100deg, rgba(195,49,62,1) 65%, rgba(50,55,74,1) 65%);
+}
+.wizard-tab-modal .modal-header {
+  border: none;
+  padding-bottom: 10px;
+}
+.wizard-tab-modal .modal-width{
+  max-width: 800px;
+}
+.wizard-tab-modal .modal-body {
+  padding: 30px 20px;
+}
+.form-wizard fieldset {
+  display: none;
+  text-align: left;
+  border:0px !important
+}
+
+.wz-h3{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+  margin: 0px 0px 10px 0px;
+}
+.wz-txt-box{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  background-color: #fff;
+  border: none;
+  border-radius: 0px !important;
+  color:#000;
+  font-size: 16px;
+  font-weight: 500;
+}
+.wz-ip-grp{
+  border-radius: 0px !important;
+  border:none;
+  background-color: #32374a;
+  color:#fff;
+}
+.rs-block{
+  width: 100%;
+  padding: 12px 10px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#000;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 14px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: -1px 1px 8px 5px rgb(0 0 0 / 20%);
+}
+.btn-wz-wt{
+  width: 200px;
+  padding: 8px 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#c3313e;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 16px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.dt-amount-form ::placeholder  {
+  color: #32374a;
+  opacity: .8;
+}
+.donor-info-form ::placeholder  {
+  color: #fff;
+  opacity: .8;
+}
+.donor-txt-box {
+    width: 100%;
+    background: 0 0;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.8);
+    border-radius: 0;
+    color: #fff;
+    text-transform: none;
+    font-family: &#x27;Montserrat&#x27;, sans-serif;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 991px) {
+  .wizard-tab-modal .modal-dialog {
+    max-width: 80%;
+}
+  .wizard-tab-modal .modal-body {
+    padding: 20px 20px;
+}
+}
+@media only screen and (max-width: 767px) {
+  .wizard-tab-modal .modal-dialog {
+    max-width: 100%;
+}
+  .wizard-tab-modal .modal-body {
+    padding: 20px 10px;
+}
+.donor-txt-box {
+  padding: 8px 5px;
+  }
+  .donor-info-form .mb-30{
+    margin: 0px 0px 20px 0px !important;
+  }
+}
+.login-toggle-btn input[type&#x3D;&quot;checkbox&quot;] {
+  height: 15px;
+  margin: 0;
+  position: relative;
+  top: 2px;
+  width: 17px;
+  background-color: transparent !important;
+}
+.login-toggle-btn {
+  padding: 0px;
+}
+.login-toggle-btn label {
+  text-transform: capitalize;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+ }
+
+ .errr-msg-white{
+   color: #dbd9d9;
+ }
+
+ ::ng-deep .mat-stepper-horizontal{
+background-color: transparent;
+ }
+ ::ng-deep .mat-horizontal-stepper-header-container {
+
+display: none !important;
+ }
+
+.btn-color{
+  background-color: #32374a;
+    color: white;
+}
+::placeholder  {
+  color: #fff !important;
+  opacity: .8 !important;
+}
+.h3-txt{
+  /* min-height: 80px !important; */
+  min-height: 54px !important;
+  font-size: 17px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 991px){
+  .h3-txt{
+    min-height: 40px !important;
+    max-height: 40px !important;
+
+}
+}
+/* // 80gFormYesOrNoModal */
+.input-box,.textarea-div {
+  color: black !important;
+}
+.payed-modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+}
+.payed-modal.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 99999;
+}
+.payed-modal .modal-dialog {
+  max-width: 40%;
+}
+.payed-modal .modal-content {
+  border-radius: 0;
+  max-height: 300px;
+  overflow: auto;
+  /* border-radius: 20px; */
+  background-color: #32374a;
+}
+.payed-modal .modal-body {
+  padding: 30px 30px;
+}
+.payd-msg{
+  display: block;
+}
+.payd-msg p{
+  display: block;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  text-transform: capitalize;
+  font-size:18px;
+  color:#fff;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+}
+.f-btn-border,.f-btn-border-red{
+  width: 100%;
+  padding: 8px 0px;
+  border: none;
+  border: solid 2px #fff;
+  background-color: transparent;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  /* border-radius: 40px; */
+   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0px 0px 10px 0px;
+}
+.f-btn-border-red{
+  background-color: #c3313e;
+  border: solid 2px #c3313e;
+}
+@media only screen and (max-width: 991px) {
+  .payed-modal .modal-dialog {
+    max-width: 60%;
+  }
+  .payd-msg p{
+  font-size:14px;
+}
+}
+
+@media only screen and (max-width: 767px) {
+  .payed-modal .modal-dialog {
+    max-width: 70%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .payed-modal .modal-dialog {
+    max-width: 100%;
+  }
+}
+
+
+/* 80gmForm */
+
+/* // donate now wizard */
+
+.eighty-gmform-modal {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+}
+.eighty-gmform-modal.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 99999;
+}
+.eighty-gmform-modal .modal-header .close{
+  padding: 0px;
+  margin: 0rem 1rem -1rem auto;
+}
+.eighty-gmform-modal .modal-dialog {
+  max-width: 50%;
+}
+.eighty-gmform-modal .modal-content {
+  border-radius: 0;
+  min-height: 300px;
+  overflow: auto;
+  border-radius: 0px;
+  background-color: #32374a;
+  background: linear-gradient(100deg, rgba(195,49,62,1) 65%, rgba(50,55,74,1) 65%);
+}
+.eighty-gmform-modal .modal-header {
+  border: none;
+  padding-bottom: 10px;
+}
+.eighty-gmform-modal .modal-width{
+  max-width: 800px;
+}
+.eighty-gmform-modal .modal-body {
+  padding: 30px 20px;
+}
+.form-wizard fieldset {
+  display: none;
+  text-align: left;
+  border:0px !important
+}
+
+.wz-h3{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  text-transform: capitalize;
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+  margin: 0px 0px 10px 0px;
+}
+.wz-txt-box{
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  background-color: #fff;
+  border: none;
+  border-radius: 0px !important;
+  color:#000;
+  font-size: 16px;
+  font-weight: 500;
+}
+.wz-ip-grp{
+  border-radius: 0px !important;
+  border:none;
+  background-color: #32374a;
+  color:#fff;
+}
+.rs-block{
+  width: 100%;
+  padding: 12px 10px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#000;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 14px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: -1px 1px 8px 5px rgb(0 0 0 / 20%);
+}
+.btn-wz-wt{
+  width: 200px;
+  padding: 8px 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  color:#c3313e;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  font-size: 16px;
+  border:none;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.dt-amount-form ::placeholder  {
+  color: #32374a;
+  opacity: .8;
+}
+.donor-info-form ::placeholder  {
+  color: #fff;
+  opacity: .8;
+}
+.donor-txt-box {
+    width: 100%;
+    background: 0 0;
+    padding: 10px 10px;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.8);
+    border-radius: 0;
+    color: #fff;
+    /* text-transform: lowercase; */
+    font-family: &#x27;Montserrat&#x27;, sans-serif;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 991px) {
+  .eighty-gmform-modal .modal-dialog {
+    max-width: 80%;
+}
+.eighty-gmform-modal .modal-body {
+    padding: 20px 20px;
+}
+}
+@media only screen and (max-width: 767px) {
+  .eighty-gmform-modal .modal-dialog {
+    max-width: 100%;
+}
+.eighty-gmform-modal .modal-body {
+    padding: 20px 10px;
+}
+}
+
+.crowd-image{
+  max-width: 80% !important;
+}
+.inpt-txt{
+  padding: 40px 10px;
+}
+
+::ng-deep .close:hover {
+  color: #ed0c0c !important;
+}.owl-item { width : 80px !important; }
+::ng-deep .owl-theme .owl-dots .owl-dot span{
+  width: 15px !important;
+    height: 15px !important;
+}
+::ng-deep .owl-theme .owl-nav{
+  display: none !important;
+}
+::ng-deep .owl-theme .owl-dots, .owl-theme .owl-nav{
+  float: left !important;
+}
+::ng-deep .owl-theme .owl-dots .owl-dot{
+  margin-bottom: 50px;
+}
+
+
+
+.index-banner{
+  position: relative;
+  height: 100vh;
+  padding: 0px 0px;
+  background-position: center center;
+  background-size:cover;
+  display: flex;
+  align-items: center;
+  padding: 0px 15%;
+  height: 545px;
+}
+.index-banner::before {
+  content: &#x27;&#x27;;
+  position: absolute;
+  left: -180px;
+  top: 0;
+  bottom: 0;
+  transform: skew(-20deg);
+  display: block;
+  width: 40%;
+  background-color:rgba(195,49,62,.67);
+  z-index: 1;
+}
+.index-caption{
+  /* text-align: left;
+  font-family: &#x27;Montserrat&#x27;, sans-serif;
+  color:#fff;
+  z-index: 999;
+  position: relative;
+  max-width: 800px; */
+  top: 30%;
+  text-align: left;
+  font-family: montserrat;
+  color: #fff;
+  left: 10%;
+  z-index: 999;
+  /* position: relative; */
+
+}
+.index-caption h3{
+  color:#fff;
+  font-size: 45px;
+  display: block;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin: 0px 0px 10px;
+}
+.index-caption p{
+  font-size: 20px;
+  font-weight: normal;
+  display: block;
+  color:#fff;
+  margin: 0px 0px 20px;
+}
+.index-banner button.donation{
+  font-family: montserrat,sans-serif;
+  background-color: #fff;
+  border-radius: none;
+  padding: 9px 20px;
+  border: none;
+  color: #c3313e;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 650;
+  width: 147px;
+  font-size: 13px;
+  height: 36px;
+}
+.index-banner button i{
+  margin: 0px 0px 0px 0px;
+}
+.index-banner ol.carousel-indicators{
+  margin-left: 0%;
+    top: 100%!important;
+    left: 0;
+    bottom: 0;
+    justify-content: left;
+}
+.index-banner ol.carousel-indicators li {
+  display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0 10px 0 0;
+    opacity: 1;
+
+}
+.index-banner ol.carousel-indicators li.active{
+  background-color: #c3313e;
+}
+/*------------------- slider section--------------*/
+/* @media only screen and (max-width: 1366px){
+  .index-caption {
+      top: 20%;
+   }
+  .carousel-caption h3{
+    font-size:40px;
+  }
+  .index-banner{
+    height: 245px;
+  }
+  } */
+  @media only screen and (max-width: 1200px){
+    .index-caption {
+      top: 17%;
+   }
+  .index-caption p{
+    font-size:16px;
+  }
+  .index-banner ol.carousel-indicators{
+      top: 64%;
+  }
+  .index-banner button.donation{
+    width: 165px;
+    padding: 8px 15px;
+  }
+  .index-banner{
+    height: 245px;
+  }
+    }
+  /* @media only screen and (max-width: 1300px){
+  .index-caption {
+      top: 17%;
+   }
+  .index-caption p{
+    font-size:16px;
+  }
+  .index-banner ol.carousel-indicators{
+      top: 64%;
+  }
+  .index-banner button.donation{
+    width: 165px;
+    padding: 8px 15px;
+  }
+  .index-banner{
+    height: 245px;
+  }
+  } */
+  @media only screen and (max-width: 1100px){
+  .index-caption {
+      top: 15%;
+   }
+  .index-caption h3{
+    font-size:35px;
+  }
+  .index-banner ol.carousel-indicators{
+      top: 60%;
+  }
+  .index-banner{
+    height: 245px;
+  }
+  }
+  @media only screen and (max-width: 1100px){
+  .index-caption {
+      top: 15%;
+   }
+  .index-caption h3{
+    font-size:30px;
+  }
+  .index-caption p{
+    display: none;
+  }
+  .index-banner ol.carousel-indicators{
+      top: 50%;
+  }
+  .index-banner{
+    height: 245px;
+  }
+  }
+  @media only screen and (max-width: 1100px){
+  .index-caption {
+      top: 15%;
+   }
+  .index-caption h3{
+    font-size:25px;
+  }
+  .index-caption p{
+    display: none;
+  }
+  .index-banner ol.carousel-indicators{
+      top: 50%;
+  }
+  .index-banner{
+    height: 245px;
+  }
+  }
+  @media only screen and (max-width: 992px){
+  .index-caption {
+      top: 15%;
+   }
+  .index-caption h3{
+    font-size:25px;
+  }
+  .index-banner{
+    height: 245px;
+  }
+  }
+  @media only screen and (max-width: 767px){
+  .index-caption {
+      top: 15%;
+   }
+  .index-caption h3{
+    font-size:20px;
+  }
+  .index-banner button.donation {
+      width: 140px;
+      padding: 6px 10px;
+  }
+  .index-banner ol.carousel-indicators{
+      display: none;
+  }
+  .index-banner{
+    height: 245px;
+  }
+  }
+  
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- slider area --><div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-pause="false">	<ol class="carousel-indicators">	  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>	  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>	  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>	</ol>	<div class="carousel-inner">	  <div class="carousel-item active">		<div class="banner" style="background-image: url(\'assets/images/slider/slider-1.jpg\')"></div>		<div class="carousel-caption d-none d-md-block">		   <h3 class="" style="color:#fff">Be The Light of HOPE</h3>		   <!-- <h2 class="">PSD TO HTML</h2>		   <h3 class="">BOOTSTRAP</h3> -->		 </div>	  </div>	  	  <div class="carousel-item ">		<div class="banner" style="background-image: url(\'assets/images/slider/slider-2.jpg\');background-size: cover;background-repeat: no-repeat;"></div>		<div class="carousel-caption d-none d-md-block">			<h3 class="" style="color:#fff">Give them a chance.</h3>			<!-- <h2 class="">PSD TO HTML</h2>			<h3 class="">BOOTSTRAP</h3> -->		</div>	  </div>	  <div class="carousel-item ">		<div class="banner" style="background-image: url(\'assets/images/slider/slider-3.jpg\')"></div>		<div class="carousel-caption d-none d-md-block">		  <h3 class="" style="color:#fff">Giving is the greatest act of Grace </h3>		  <!-- <h2 class="">PSD TO HTML</h2>		  <h3 class="">BOOTSTRAP</h3> -->		 </div>	  </div>	 	  	</div>	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">	  <span class="carousel-control-prev-icon" aria-hidden="true"></span>	  <span class="sr-only">Previous</span>	</a>	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">	  <span class="carousel-control-next-icon" aria-hidden="true"></span>	  <span class="sr-only">Next</span>	</a>  </div><!-- <div class="index-banner" style="background-image: url(\'assets/images/slider/slider-1.jpg\'); ">	<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">		<ol class="carousel-indicators">			<li data-target="#carousel" data-slide-to="0" class="active"></li>			<li data-target="#carousel" data-slide-to="1"></li>			<li data-target="#carousel" data-slide-to="2"></li>		</ol>		<div class="carousel-inner">			<div class="carousel-item " *ngFor="let item of bannerList, let i = index" [class]="(i === 0) ? \'active\' : \'inactive\'">				<!-- <div class="overlay-banner">					<img class="img-fluid img-overlay slider-img" src="assets/images/slider/slider-1.jpg" width="100%">				</div> --        <div class="index-caption">					<h3 class="animated fadeInDown slider-cap cursr-none">{{item.title}}</h3>					<p class="animated fadeInUp slider-p cursr-none"> {{item.story.length>70 ? (item.story | slice:0:70)+\'..\':(item.story)}}</p>          -- <button type="" class="donation" style="width:170px" routerLink="/fund-raiser-detail/{{item.id}}"><i class="fa fa-heart" aria-hidden="true"></i> &nbsp;Donate To NGO</button> --				</div>			</div>		</div>		<a class="carousel-control left" href="#carousel" data-slide="prev"></a>		<a class="carousel-control right" href="#carousel" data-slide="next"></a>	</div></div> --><!-- <div class="sec-views">	<div class="container">		<div class="view-div-bar">			<div class="row">				<div class="col-md-12 col-lg-12">					<div class="view-div">						<div class="view-list">							<h3>Donate now</h3>							<p>Sposoring the education of 6 </p>						</div>					</div>					<div class="view-div">						<div class="view-list">							<h3>Donate now</h3>							<p>Sposoring the education of 6 </p>						</div>					</div>					<div class="view-div">						<div class="view-list">							<h3>Donate now</h3>							<p>Sposoring the education of 6</p>						</div>					</div>					<div class="view-div">						<div class="view-list">							<h3>Donate now</h3>							<p>Sposoring the education of 6 </p>						</div>					</div>					<div class="view-div">						<div class="view-list">							<h3>Donate now</h3>							<p>Sposoring the education of 6</p>						</div>					</div>				</div>			</div>		</div>	</div></div> --><section class="section-scheme">	<div class="container">		<div class="row align-items-center">			<div class="col-md-6 col-8">				<div class="page-lbar">					<h2 class="left-header cursr-none">Our Fundraisers Scheme</h2>					<!-- <li class="left-hd-list">hidden in the middle of text.</li> -->				</div>			</div>			<div class="col-md-6 col-4 text-right" *ngIf="this.length>3">        <!-- <div class="scheme-icon-left" (click)="slickController.prev()"><i class="fa fa-angle-left"></i></div>        <div class="scheme-icon-right" (click)="slickController.next()" ><i class="fa fa-angle-right"></i></div> -->        <div class="scheme-icon-left" (click)="previous()"><i class="fa fa-angle-left"></i></div>        <div class="scheme-icon-right" (click)="next()"  ><i class="fa fa-angle-right"></i></div>            </div>		</div>		<div class="row" *ngIf="this.length==1">					<div class="col-md-12">		      <owl-carousel-o [options]="customOptions">              <ng-template carouselSlide *ngFor="let item of fundRaiserList">                                  <div class="col-md-4">                    <img src="{{baseUrl}}{{item.image_url}}" style="cursor: pointer;" class="img-fluid img-new" routerLink="/fund-raiser-detail/{{item.id}}" >                    <div class="scheme-subject">                      <h5 class="h3-txt">{{item.title.length>70 ? (item.title | slice:0:70)+\'..\':(item.title)}}</h5>                      <span>₹{{item.fund_raised}}</span> raised out of <span>₹{{item.fund_required}}</span>                      <div class="progress mb-2" style="height: 5px;">                        <!-- <div class="progress-bar progress-bar-red" role="progressbar" style="width:{{raisedAmountInPercentage}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> -->                        <div class="progress-bar progress-bar-red" role="progressbar" style="width:{{item.fund_raised*100/item.fund_required}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>                      </div>                      <div class="social-link">                        <li class="mt-1 cursr-pointer">share now</li>                        <share-buttons [theme]="\'modern-dark\'"                        [include]="[\'facebook\',\'twitter\',\'linkedin\',\'whatsapp\']"                        [show]="4"                        [size]="1"                        [url]="\'https://crowdworksindia.org/#/fund-raiser-detail/\' + item.id"                        [description]="story"                        [image] ="\'https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg\'"                        [autoSetMeta]="false"                        ></share-buttons>                      </div>                      <a href="" routerLink="/fund-raiser-detail/{{item.id}}"><i class="fa fa-heart" aria-hidden="true"></i>Donate Now</a>                    </div>                    </div>                              </ng-template>            </owl-carousel-o>			</div>		</div>   		<div class="row" *ngIf="this.length>1">					<div class="col-md-12">		      <owl-carousel-o [options]="customOptions">              <ng-template carouselSlide *ngFor="let item of fundRaiserList">                <div>                  <div class="col">                    <img src="{{baseUrl}}{{item.image_url}}" style="cursor: pointer;" class="img-fluid img-new" routerLink="/fund-raiser-detail/{{item.id}}" >                    <div class="scheme-subject">                      <h5 class="h3-txt">{{item.title.length>70 ? (item.title | slice:0:70)+\'..\':(item.title)}}</h5>                      <span>₹{{item.fund_raised}}</span> raised out of <span>₹{{item.fund_required}}</span>                      <div class="progress mb-2" style="height: 5px;">                        <!-- <div class="progress-bar progress-bar-red" role="progressbar" style="width:{{raisedAmountInPercentage}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> -->                        <div class="progress-bar progress-bar-red" role="progressbar" style="width:{{item.fund_raised*100/item.fund_required}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>                      </div>                      <div class="social-link">                        <li class="mt-1 cursr-pointer">share now</li>                        <share-buttons [theme]="\'modern-dark\'"                        [include]="[\'facebook\',\'twitter\',\'linkedin\',\'whatsapp\']"                        [show]="4"                        [size]="1"                        [url]="\'https://crowdworksindia.org/#/fund-raiser-detail/\' + item.id"                        [description]="story"                        [image] ="\'https://www.eduforbetterment.com/wp-content/uploads/2020/08/qrcode.jpg\'"                        [autoSetMeta]="false"                        ></share-buttons>                      </div>                      <a href="" routerLink="/fund-raiser-detail/{{item.id}}"><i class="fa fa-heart" aria-hidden="true"></i>Donate Now</a>                    </div>                    </div>                </div>              </ng-template>            </owl-carousel-o>			</div>		</div>  </div></section><section class="section-campaigns campaigns-bc">	<div class="container">		<div class="row">			<div class="col-12">				<div class="page-hd cursr-none">					<h2 class="txt-white">Our campaigns</h2>					<li class="txt-white">Please select the category that you want to donate.</li>				</div>			</div>		</div>		<div class="row">			<div class="col-md-12 col-12">				<div class="row">					<div class="col-md-3" *ngFor="let item of campaignList" style="cursor: pointer;" >						<div class="camp-div camp-hvr" routerLink="/campaign/{{item.id}}">							<div class="camp-img">                <img src="{{baseUrl1}}{{item.icon_url}}"  class="img-fluid" ></div>							<div class="cmp-div-p">								<p>{{item.title}}</p>							</div>						</div>					</div>				</div>			</div>		</div>	</div></section><section class="section-supports cursr-none">	<div class="container">		<div class="row" style="padding: 45px 10px 0px 10px;">			<div class="col-12">				<div class="page-hd">					<h2>why crowd works india foundation?</h2>					<!-- <li>Lorem Ipsum.</li> -->				</div>			</div>		</div>		<div class="row">			<div class="col-md-11 col-12 ml-auto mr-auto">				<div class="row">					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/industry.png" class="img-fluid crowd-image">							<div class="sup-div-p">								<p>Industry best fundrasing sucess rate</p>							</div>						</div>					</div>					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/supported.png" class="img-fluid crowd-image">							<div class="sup-div-p">								<p>Supported by donors</p>							</div>						</div>					</div>					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/easy-manage.png" class="img-fluid crowd-image">							<div class="sup-div-p">								<p>Easy to manage tools to boost result</p>							</div>						</div>					</div>					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/payment.png" class="img-fluid crowd-image">							<div class="sup-div-p">								<p>Received donation via all popular payment modes</p>							</div>						</div>					</div>					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/ge-experts.png" class="img-fluid crowd-image">							<div class="sup-div-p">								<p>Get experts support 24*7</p>							</div>						</div>					</div>					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/dashboard.png" class="img-fluid crowd-image">							<div class="sup-div-p">									<p>A dedicated smart dashboard</p>							</div>						</div>					</div>					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/withdraw.png" class="img-fluid crowd-image">							<div class="sup-div-p">								<p>Withdraw fund without hassle</p>							</div>						</div>					</div>					<div class="col-md-3 col-lg-3 col-sm-6 col-7 mx-auto">						<div class="supports-div">							<img src="assets/images/supports/international.png" class="img-fluid crowd-image">							<div class="sup-div-p">								<p>International payment support</p>							</div>						</div>					</div>				</div>			</div>		</div>	</div></section><section class="section-media">	<div class="container">		<div class="row">			<div class="col-md-12" style="cursor: pointer;">        <a href="https://{{facebook}}" target="_blank" >				<div class="media-li gn-Fb">					<img src="assets/images/media/facebook-02.png">					<p>Facebook</p>				</div>      </a>      <a href="https://{{instagram}}" target="_blank" >				<div class="media-li gn-In">					<img src="assets/images/media/instagram-02.png">					<p>instagram</p>				</div></a>        <a href="https://{{whatsapp}}" target="_blank" >				<div class="media-li gn-Wp">					<img src="assets/images/media/whatsapp-02.png">					<p>whatsapp</p>				</div>        </a>        <a href="https://{{linkedin}}" target="_blank" >				<div class="media-li gn-Ln">					<img src="assets/images/media/linkedin-02.png">					<p>linkedin</p>				</div></a>        <a href="https://{{twitter}}" target="_blank" >				<div class="media-li gn-Tw">					<img src="assets/images/media/twiter-02.png">					<p>Twitter</p>				</div>        </a>			</div>		</div>	</div></section></div>'
+    var COMPONENTS = [{'name': 'AboutUsComponent', 'selector': 'app-about-us'},{'name': 'AmlPolicyComponent', 'selector': 'app-aml-policy'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CampaignComponent', 'selector': 'app-campaign'},{'name': 'CancellationPolicyComponent', 'selector': 'app-cancellation-policy'},{'name': 'CheckoutComponent', 'selector': 'paytm-checkout'},{'name': 'ContactUsComponent', 'selector': 'app-contact-us'},{'name': 'DemoComponent', 'selector': 'app-demo'},{'name': 'DonateNowComponent', 'selector': 'app-donate-now'},{'name': 'DonateUserComponent', 'selector': 'app-donate-user'},{'name': 'EditFundraiserComponent', 'selector': 'app-edit-fundraiser'},{'name': 'EditLoanComponent', 'selector': 'app-edit-loan'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FundRaiserComponent', 'selector': 'app-fund-raiser'},{'name': 'FundRaiserDetailComponent', 'selector': 'app-fund-raiser-detail'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HowItWorksComponent', 'selector': 'app-how-it-works'},{'name': 'LendComponent', 'selector': 'app-lend'},{'name': 'LoanDetailsComponent', 'selector': 'app-loan-details'},{'name': 'OurCampaignsComponent', 'selector': 'app-our-campaigns'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PaytmComponent', 'selector': 'app-paytm'},{'name': 'PaytmPaymentComponent', 'selector': 'app-paytm-payment'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SearchListComponent', 'selector': 'app-search-list'},{'name': 'SignUpComponent', 'selector': 'app-sign-up'},{'name': 'StartFundraiserComponent', 'selector': 'app-start-fundraiser'},{'name': 'StatisticsComponent', 'selector': 'app-statistics'},{'name': 'TermsAndConditionsComponent', 'selector': 'app-terms-and-conditions'},{'name': 'VolunteerComponent', 'selector': 'app-volunteer'},{'name': 'WithdrawStartFundraiserComponent', 'selector': 'app-withdraw-start-fundraiser'}];
+    var DIRECTIVES = [{'name': 'DragDirective', 'selector': '[appDrag]'}];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
