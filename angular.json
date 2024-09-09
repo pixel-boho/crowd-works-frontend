@@ -11,8 +11,9 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builderTarget": "@angular-devkit/build-angular:browser",
           "options": {
+            "builderTarget":"ngo:build",
             "outputPath": "dist/ngo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -41,7 +42,7 @@
               "src/assets/js/owl.carousel.min.js",
               "src/assets/js/plugins.js",
               "src/assets/js/custom.js",
-              "src/assets/js/slick.js",
+              "src/assets/js/slick.js"
             ]
           },
           "configurations": {
@@ -78,7 +79,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngo:build"
+            "buildTarget": "ngo:build"
           },
           "configurations": {
             "production": {
