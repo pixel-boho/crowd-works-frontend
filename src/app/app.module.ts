@@ -9,7 +9,7 @@ import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { HomeComponent } from './Feature/home/home.component';
 import { from } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AboutUsComponent } from './Feature/about-us/about-us.component';
 import { OurCampaignsComponent } from './Feature/our-campaigns/our-campaigns.component';
 import { FundRaiserComponent } from './Feature/fund-raiser/fund-raiser.component';
@@ -57,78 +57,73 @@ import { CheckoutModule } from 'paytm-blink-checkout-angular';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
+import { RouterModule } from '@angular/router';
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    AboutUsComponent,
-    OurCampaignsComponent,
-    FundRaiserComponent,
-    HowItWorksComponent,
-    ContactUsComponent,
-    SignUpComponent,
-    VolunteerComponent,
-    ProfileComponent,
-    DonateNowComponent,
-    FundRaiserDetailComponent,
-    LendComponent,
-    StartFundraiserComponent,
-    WithdrawStartFundraiserComponent,
-    EditFundraiserComponent,
-    LoanDetailsComponent,
-    SearchListComponent,
-    EditLoanComponent,
-    PageNotFoundComponent,
-    CampaignComponent,
-    StatisticsComponent,
-    PrivacyPolicyComponent,
-    TermsAndConditionsComponent,
-    AmlPolicyComponent,
-    CancellationPolicyComponent,
-    PaytmComponent,
-    PaytmPaymentComponent,
-    DonateUserComponent, DragDirective, DemoComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    NgxPaginationModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    NgxIntlTelInputModule,
-    MatInputModule,
-    MatAutocompleteModule,
-    PdfViewerModule,
-    FormsModule,
-    MatRadioModule,
-    NgxSpinnerModule,
-    CheckoutModule,
-    CarouselModule, MatStepperModule,
-    // PaginationControlsComponent,
-    ShareButtonsModule.withConfig({
-      debug: true
-    }),
-    ShareIconsModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(), // ToastrModule added
-    NgxSlickJsModule.forRoot({
-      links: {
-        // jquery: "https://code.jquery.com/jquery-1.12.4.min.js",
-        slickJs: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
-        slickCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css",
-        slickThemeCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-      }
-    })
 
-  ],
-  providers: [Meta, { provide: LocationStrategy, useClass: HashLocationStrategy }],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        HomeComponent,
+        AboutUsComponent,
+        OurCampaignsComponent,
+        FundRaiserComponent,
+        HowItWorksComponent,
+        ContactUsComponent,
+        SignUpComponent,
+        VolunteerComponent,
+        ProfileComponent,
+        DonateNowComponent,
+        FundRaiserDetailComponent,
+        LendComponent,
+        StartFundraiserComponent,
+        WithdrawStartFundraiserComponent,
+        EditFundraiserComponent,
+        LoanDetailsComponent,
+        SearchListComponent,
+        EditLoanComponent,
+        PageNotFoundComponent,
+        CampaignComponent,
+        StatisticsComponent,
+        PrivacyPolicyComponent,
+        TermsAndConditionsComponent,
+        AmlPolicyComponent,
+        CancellationPolicyComponent,
+        PaytmComponent,
+        PaytmPaymentComponent,
+        DonateUserComponent, DragDirective, DemoComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        ReactiveFormsModule,
+        NgxPaginationModule,
+        MatStepperModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        NgxIntlTelInputModule,
+        MatInputModule,
+        MatAutocompleteModule,
+        PdfViewerModule,
+        FormsModule,
+        MatRadioModule,
+        NgxSpinnerModule,
+        CheckoutModule,
+        CarouselModule, MatStepperModule,
+        // PaginationControlsComponent,
+        ShareButtonsModule.withConfig({
+            debug: true
+        }),
+        ShareIconsModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(), // ToastrModule added
+        NgxSlickJsModule.forRoot({
+            links: {
+                // jquery: "https://code.jquery.com/jquery-1.12.4.min.js",
+                slickJs: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
+                slickCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css",
+                slickThemeCss: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+            }
+        })], providers: [Meta, { provide: LocationStrategy, useClass: HashLocationStrategy }, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
