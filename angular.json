@@ -1,5 +1,6 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -41,7 +42,7 @@
               "src/assets/js/owl.carousel.min.js",
               "src/assets/js/plugins.js",
               "src/assets/js/custom.js",
-              "src/assets/js/slick.js",
+              "src/assets/js/slick.js"
             ]
           },
           "configurations": {
@@ -78,7 +79,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngo:build"
+            "buildTarget": "ngo:build"
           },
           "configurations": {
             "production": {
@@ -90,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngo:build"
+            "buildTarget": "ngo:build"
           }
         },
         "test": {
@@ -123,7 +124,7 @@
               "e2e/tsconfig.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "*/node_modules/*"
             ]
           }
         },
@@ -142,7 +143,6 @@
       }
     }
   },
-  "defaultProject": "ngo",
   "cli": {
     "analytics": "7fcafedf-647f-417b-8d2f-b570b7e6b579"
   }

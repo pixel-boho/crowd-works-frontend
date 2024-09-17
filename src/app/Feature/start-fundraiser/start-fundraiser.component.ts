@@ -66,9 +66,9 @@ export class StartFundraiserComponent implements OnInit {
   upload(): void {
     //get image upload file obj;
   }
-  constructor(private fb: FormBuilder,private route:ActivatedRoute,private router: Router,private apiService: ApiService,private toastr: ToastrService,private _formBuilder: FormBuilder ) {
+  constructor(private fb: FormBuilder,private route:ActivatedRoute,private router: Router,private apiService: ApiService,private toastr: ToastrService) {
    this.getCatgoryList();
-    this.startFundraiserForm = this._formBuilder.group({
+    this.startFundraiserForm = this.fb.group({
       name: ['',[Validators.required]],
       email: ['',[Validators.required,Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")]],
       phone: ['', [Validators.required]] ,

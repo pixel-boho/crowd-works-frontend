@@ -1,6 +1,5 @@
 import { BrowserModule, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { DragDirective } from './Feature/dragDrop.directive';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,16 +15,15 @@ import { FundRaiserComponent } from './Feature/fund-raiser/fund-raiser.component
 import { HowItWorksComponent } from './Feature/how-it-works/how-it-works.component';
 import { ContactUsComponent } from './Feature/contact-us/contact-us.component';
 import { SignUpComponent } from './Feature/sign-up/sign-up.component';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { VolunteerComponent } from './Feature/volunteer/volunteer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {MatInputModule} from '@angular/material/input';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ProfileComponent } from './Feature/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DonateNowComponent } from './Feature/donate-now/donate-now.component';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { FundRaiserDetailComponent } from './Feature/fund-raiser-detail/fund-raiser-detail.component';
 import { LendComponent } from './Feature/lend/lend.component';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -52,11 +50,14 @@ import { TermsAndConditionsComponent } from './Feature/terms-and-conditions/term
 import { AmlPolicyComponent } from './Feature/aml-policy/aml-policy.component';
 import { CancellationPolicyComponent } from './Feature/cancellation-policy/cancellation-policy.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { PaytmComponent } from './Feature/paytm/paytm.component';
-import { CheckoutModule } from 'paytm-blink-checkout-angular';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -96,26 +97,26 @@ import { DemoComponent } from './demo/demo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ShareButtonsModule,
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     MatStepperModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgxIntlTelInputModule,
     MatInputModule,
     MatAutocompleteModule,
     PdfViewerModule,
     FormsModule,
     MatRadioModule,
     NgxSpinnerModule,
-    CheckoutModule,
-    CarouselModule, MatStepperModule,
-    // PaginationControlsComponent,
+    CarouselModule,
+     MatStepperModule,
     ShareButtonsModule.withConfig({
       debug: true
     }),
     ShareIconsModule,
+    // PaginationControlsComponent,
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
     NgxSlickJsModule.forRoot({
