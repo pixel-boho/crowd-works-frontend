@@ -1,4 +1,4 @@
-import { element } from 'protractor';
+// import { element } from 'protractor';
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';

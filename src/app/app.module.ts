@@ -1,6 +1,7 @@
 import { BrowserModule, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { DragDirective } from './Feature/dragDrop.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,7 +57,6 @@ import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -99,6 +99,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ShareButtonsModule,
     HttpClientModule,
+    MatStepperModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     MatStepperModule,

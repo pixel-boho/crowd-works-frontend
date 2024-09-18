@@ -1,7 +1,7 @@
 import { ApiService } from 'src/app/core/service/api.service';
 import { AuthService } from './../../service/auth.service';
 import { FormsModule } from '@angular/forms';
-import { element } from 'protractor';
+// import { element } from 'protractor';
 import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 import CONFIG from '../../../../../mocks/merchant-config.js';
@@ -27,7 +27,7 @@ declare var google: any;
 declare let Razorpay: any;
 declare function openJsCheckoutPopup(orderId: any, txnToken: any, amount: any)
 import 'jquery';
-import { Console } from 'console';
+// import { Console } from 'console';
 import { CheckoutService } from 'paytm-blink-checkout-angular';
 
 @Component({

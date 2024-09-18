@@ -27,6 +27,7 @@
     "ngx-bootstrap": "^18.0.2",
     "ngx-extended-pdf-viewer": "^21.4.0",
     "ngx-infinite-scroll": "^18.0.0",
+    "ngx-intl-tel-input": "^3.2.0",
     "ngx-owl-carousel-o": "^18.0.0",
     "ngx-pagination": "^6.0.3",
     "ngx-sharebuttons": "^15.0.3",
