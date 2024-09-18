@@ -19,7 +19,6 @@ import { SignUpComponent } from './Feature/sign-up/sign-up.component';
 import { VolunteerComponent } from './Feature/volunteer/volunteer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import {MatInputModule} from '@angular/material/input';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ProfileComponent } from './Feature/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -52,7 +51,6 @@ import { AmlPolicyComponent } from './Feature/aml-policy/aml-policy.component';
 import { CancellationPolicyComponent } from './Feature/cancellation-policy/cancellation-policy.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
@@ -97,7 +95,6 @@ import { DemoComponent } from './demo/demo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShareButtonsModule,
     HttpClientModule,
     MatStepperModule,
     ReactiveFormsModule,
