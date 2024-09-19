@@ -9,7 +9,6 @@ import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { HomeComponent } from './Feature/home/home.component';
 import { from } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
 import { AboutUsComponent } from './Feature/about-us/about-us.component';
 import { OurCampaignsComponent } from './Feature/our-campaigns/our-campaigns.component';
 import { FundRaiserComponent } from './Feature/fund-raiser/fund-raiser.component';
@@ -55,7 +54,8 @@ import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
