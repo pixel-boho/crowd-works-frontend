@@ -24,7 +24,7 @@ export class CheckoutService implements OnDestroy {
     @Inject(DOCUMENT) private readonly document: any) {
   }
 
-  init(config: any, options?: ICheckoutOptions): void {
+  init(config: any, options?:  ICheckoutOptions): void {
     options = CheckoutOptions.from(options);
 
     const merchantId = config && config.merchant && config.merchant.mid;
