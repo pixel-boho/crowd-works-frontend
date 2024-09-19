@@ -50,13 +50,12 @@ import { TermsAndConditionsComponent } from './Feature/terms-and-conditions/term
 import { AmlPolicyComponent } from './Feature/aml-policy/aml-policy.component';
 import { CancellationPolicyComponent } from './Feature/cancellation-policy/cancellation-policy.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareButtonsModule } from 'ngx-sharebuttons';
 import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
-
-
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 @NgModule({
   declarations: [
@@ -91,12 +90,14 @@ import { DemoComponent } from './demo/demo.component';
     PaytmComponent,
     PaytmPaymentComponent,
     DonateUserComponent, DragDirective, DemoComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatStepperModule,
+    NgxIntlTelInputModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     MatStepperModule,
@@ -109,6 +110,7 @@ import { DemoComponent } from './demo/demo.component';
     MatRadioModule,
     NgxSpinnerModule,
     CarouselModule,
+    
      MatStepperModule,
     ShareButtonsModule.withConfig({
       debug: true

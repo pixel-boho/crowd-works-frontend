@@ -103,19 +103,27 @@ export class StartFundraiserComponent implements OnInit {
     return this.startFundraiserForm.controls;
   }
   handlepricing(){
-    this.apiService.getPricing().subscribe((res:any)=>{
-      //console.log(res)
-      this.priceList = res['list'];
-   }, error => {
+    this.apiService.getPricing().subscribe({
+      next:(res:any)=>{
+          //console.log(res)
+          this.priceList = res['list'];
+       },
+       error:(reason:any)=>{
+        console.log(reason);
+       }
    })
   }
   // pricing_id
   getRelation(){
-    this.apiService.getRelation().subscribe((res:any)=>{
-      this.relationList = res['list'];
-   }, error => {
-   })
- }
+    this.apiService.getRelation().subscribe({
+      next:(res:any)=>{
+        this.relationList = res['list'];
+      },
+      error:(reason:any)=>{
+        console.log(reason); 
+      }
+    })
+  }
  getCatgoryList(){
   this.apiService.getCampaignList().subscribe((res:any)=>{
     this.categoryList = res['list'];
