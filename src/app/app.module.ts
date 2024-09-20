@@ -97,7 +97,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     MatStepperModule,
-    NgxIntlTelInputModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     MatStepperModule,
