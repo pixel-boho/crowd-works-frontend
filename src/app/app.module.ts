@@ -54,7 +54,7 @@ import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
-import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+// import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -96,7 +96,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     MatStepperModule,
-    NgxIntlTelInputModule,
+    // NgxIntlTelInputModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     MatStepperModule,

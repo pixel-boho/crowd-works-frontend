@@ -12,9 +12,8 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builderTarget": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "builderTarget":"ngo:build",
             "outputPath": "dist/ngo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -84,15 +83,14 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngo:build:production",
-              "proxyConfig": "src/proxy.conf.json"
+              "buildTarget": "ngo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ngo:build"
+            "browserTarget": "ngo:build"
           }
         },
         "test": {
