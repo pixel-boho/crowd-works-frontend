@@ -54,8 +54,12 @@ import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
+<<<<<<< Updated upstream
 import { HttpClientModule } from '@angular/common/http';
 
+=======
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -97,6 +101,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     MatStepperModule,
+    NgxIntlTelInputModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     MatStepperModule,
