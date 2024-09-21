@@ -1,4 +1,4 @@
-import { element } from 'protractor';
+// import { element } from 'protractor';
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -66,9 +66,9 @@ export class StartFundraiserComponent implements OnInit {
   upload(): void {
     //get image upload file obj;
   }
-  constructor(private fb: FormBuilder,private route:ActivatedRoute,private router: Router,private apiService: ApiService,private toastr: ToastrService,private _formBuilder: FormBuilder ) {
+  constructor(private fb: FormBuilder,private route:ActivatedRoute,private router: Router,private apiService: ApiService,private toastr: ToastrService) {
    this.getCatgoryList();
-    this.startFundraiserForm = this._formBuilder.group({
+    this.startFundraiserForm = this.fb.group({
       name: ['',[Validators.required]],
       email: ['',[Validators.required,Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")]],
       phone: ['', [Validators.required]] ,
@@ -103,19 +103,27 @@ export class StartFundraiserComponent implements OnInit {
     return this.startFundraiserForm.controls;
   }
   handlepricing(){
-    this.apiService.getPricing().subscribe((res:any)=>{
-      //console.log(res)
-      this.priceList = res['list'];
-   }, error => {
+    this.apiService.getPricing().subscribe({
+      next:(res:any)=>{
+          //console.log(res)
+          this.priceList = res['list'];
+       },
+       error:(reason:any)=>{
+        console.log(reason);
+       }
    })
   }
   // pricing_id
   getRelation(){
-    this.apiService.getRelation().subscribe((res:any)=>{
-      this.relationList = res['list'];
-   }, error => {
-   })
- }
+    this.apiService.getRelation().subscribe({
+      next:(res:any)=>{
+        this.relationList = res['list'];
+      },
+      error:(reason:any)=>{
+        console.log(reason); 
+      }
+    })
+  }
  getCatgoryList(){
   this.apiService.getCampaignList().subscribe((res:any)=>{
     this.categoryList = res['list'];

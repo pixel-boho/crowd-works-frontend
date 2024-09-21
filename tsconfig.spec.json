@@ -3,7 +3,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "enableIvy": false,
+    // "enableIvy": false,
     "types": [
       "jasmine"
     ]
