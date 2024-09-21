@@ -1,7 +1,6 @@
 import { BrowserModule, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DragDirective } from './Feature/dragDrop.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,7 +48,7 @@ import { TermsAndConditionsComponent } from './Feature/terms-and-conditions/term
 import { AmlPolicyComponent } from './Feature/aml-policy/aml-policy.component';
 import { CancellationPolicyComponent } from './Feature/cancellation-policy/cancellation-policy.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { ShareButtonsModule } from 'ngx-sharebuttons';
+// import { ShareButtonsModule } from 'ngx-sharebuttons';
 import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
@@ -111,11 +110,11 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselModule,
     
      MatStepperModule,
-    ShareButtonsModule.withConfig({
-      debug: true
-    }),
-    ShareIconsModule,
-    // PaginationControlsComponent,
+    // ShareButtonsModule.withConfig({
+    //   debug: true
+    // }),
+    // ShareIconsModule,
+    // // PaginationControlsComponent,
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
     NgxSlickJsModule.forRoot({
