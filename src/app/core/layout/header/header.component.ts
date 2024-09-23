@@ -1,6 +1,5 @@
 import { ApiService } from 'src/app/core/service/api.service';
 import { AuthService } from './../../service/auth.service';
-import { FormsModule } from '@angular/forms';
 // import { element } from 'protractor';
 import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
@@ -11,6 +10,7 @@ import {
   Validators,
   FormGroup,
 } from '@angular/forms';
+
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import {
@@ -40,21 +40,21 @@ import { CheckoutService } from 'paytm-blink-checkout-angular';
 export class HeaderComponent implements OnInit {
   @ViewChild('stepper') private stepper: MatStepper;
   navbarOpen = false;
-  initialConfig: any;
+  initialConfig: any = ''
   loadScript = false;
   show: boolean = false;
-  signUpForm: any;
-  otpForm: any;
-  loginForm: any;
+  signUpForm: any =''
+  otpForm: any = ''
+  loginForm: any = ''
   submitted: boolean = false;
   clicked: boolean = false;
-  otp: any;
-  apiToken: any;
-  phone: any;
-  country_code: any;
+  otp: any = ''
+  apiToken: any = ''
+  phone: any = ''
+  country_code: any = ''
   apiTokens: any;
   loginStatus: boolean;
-  response: any;
+  response: any = ''
   separateDialCode = false;
   SearchCountryField = SearchCountryField;
   CountryISO = CountryISO;
@@ -63,88 +63,88 @@ export class HeaderComponent implements OnInit {
     CountryISO.UnitedStates,
     CountryISO.UnitedKingdom,
   ];
-  Layer: any;
-  mid: any
-  message: any;
-  messageverify: any;
-  loginToken: any;
-  data: any;
+  Layer: any = ''
+  mid: any = ''
+  message: any =''
+  messageverify: any = ''
+  loginToken: any = ''
+  data: any = ''
   feedbackForm: FormGroup;
-  feedbackmessage: any;
+  feedbackmessage: any = ''
   searchForm: FormGroup;
-  searchResult: any;
+  searchResult: any = ''
   submittedlogin: boolean;
   submittedfeedback: boolean;
-  token: string;
-  userDetails: any;
-  points: any;
+  token: string = ''
+  userDetails: any = ''
+  points: any = ''
   isLoading = false;
-  otpOne: any;
-  otpTwo: any;
-  otpThree: any;
-  otpFour: any;
-  phnomessage: any;
+  otpOne: any = ''
+  otpTwo: any = ''
+  otpThree: any =''
+  otpFour: any = ''
+  phnomessage: any = ''
   isLoadingsignUp: boolean;
-  campaignList: any;
-  baseUrl1: any;
-  campaignId: any;
-  firstFormGroupNGO: any;
-  secondFormGroupNgo: any;
-  eightygmForm: any;
-  pageNumber: number;
-  submittedgmForm: boolean;
+  campaignList: any = ''
+  baseUrl1: any = ''
+  campaignId: any =''
+  firstFormGroupNGO: any = ''
+  secondFormGroupNgo: any = ''
+  eightygmForm: any = ''
+  pageNumber: number = 1
+  submittedgmForm: boolean
   infoStatus: boolean;
-  orderResponse: any;
-  formdata: any;
+  orderResponse: any = ''
+  formdata: any =''
   show_donor_information: number;
-  customer_id: any;
-  gmformdata: any;
-  certificate_name: any;
-  certificate_address: any;
-  certificate_phone: any;
-  certificate_pan: any;
-  orderId: any;
-  amount: any;
-  key: any;
-  rzppay: any;
-  razorpayResponse: string;
+  customer_id: any = ''
+  gmformdata: any = ''
+  certificate_name: any = ''
+  certificate_address: any = ''
+  certificate_phone: any =''
+  certificate_pan: any = ''
+  orderId: any = ''
+  amount: any = ''
+  key: any = ''
+  rzppay: any = ''
+  razorpayResponse: string = ''
   showModal: boolean;
-  health_issue: any;
-  RAZORPAY_OPTIONS: any;
+  health_issue: any = ''
+  RAZORPAY_OPTIONS: any = ''
   donationAmountNgo: number;
-  logintoken: string;
+  logintoken: string = ''
   phoneerror: boolean;
   eightygStatus: boolean;
   show_80g_formStatus: number;
-  smallamount: any;
-  pointDetails: any;
+  smallamount: any =''
+  pointDetails: any = ''
   isLoadingVerifyOtp: boolean;
   isLoadingFeedback: boolean;
-  dontedId: any;
-  datetody: any;
+  dontedId: any = ''
+  datetody: any = ''
   selectData: boolean;
   isLoggedIn: boolean;
   isSignUp: boolean;
-  data1: any;
-  data2: any
-  FormGroupNgo: any;
-  userid: any;
+  data1: any = ''
+  data2: any = ''
+  FormGroupNgo: any = ''
+  userid: any = ''
   options: { key: string; amount: any; name: string; description: string; image: string; order_id: string; handler: (response: any) => void; prefill: { name: string; email: string; contact: string; }; notes: { address: string; }; theme: { color: string; }; };
-  paytm: any;
-  url: string;
-  txntoken: any;
+  paytm: any = ''
+  url: string = ''
+  txntoken: any = ''
   config: { root: string; flow: string; data: { orderId: any; token: any; tokenType: string; amount: any; }; handler: { notifyMerchant: (eventName: any, data: any) => void; }; };
   isCheckoutVisible: boolean;
-  apikey: any;
-  user: any;
-  user_name: any;
-  email: any;
-  phone_number: any;
-  name: any;
-  mob: any;
-  pancard_no: any;
-  check_btn: any;
-  payment_id: any;
+  apikey: any = ''
+  user: any = ''
+  user_name: any = ''
+  email: any =''
+  phone_number: any =''
+  name: any = ''
+  mob: any = ''
+  pancard_no: any = ''
+  check_btn: any = ''
+  payment_id: any = ''
   constructor(
     private readonly checkoutService: CheckoutService,
     private fb: FormBuilder,
@@ -184,7 +184,7 @@ export class HeaderComponent implements OnInit {
 
     this.loginForm = this.fb.group({
       phone: ['', [Validators.required]],
-      terms_and_Conditions: ['', [Validators.required]],
+      terms_and_Conditions: ['', [Validators.required]],  
     });
 
     this.otpForm = this.fb.group({
