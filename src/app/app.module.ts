@@ -1,6 +1,5 @@
 import { BrowserModule, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DragDirective } from './Feature/dragDrop.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,6 +53,7 @@ import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
 // import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,9 +93,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatStepperModule,
     // NgxIntlTelInputModule,
-    ReactiveFormsModule,
     NgxPaginationModule,
     MatStepperModule,
     MatFormFieldModule,
@@ -104,7 +105,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatAutocompleteModule,
     PdfViewerModule,
     FormsModule,
-    MatRadioModule,
+    MatRadioModule,   
     NgxSpinnerModule,
     CarouselModule,
     
