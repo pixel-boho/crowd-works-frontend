@@ -1,8 +1,8 @@
 import { ApiService } from 'src/app/core/service/api.service';
 import { AuthService } from './../../service/auth.service';
+
 // import { element } from 'protractor';
 import { Component, HostListener, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-
 import CONFIG from '../../../../../mocks/merchant-config.js';
 import {
   FormBuilder,

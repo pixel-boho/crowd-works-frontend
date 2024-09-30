@@ -54,6 +54,7 @@ import { DemoComponent } from './demo/demo.component';
 // import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,7 +109,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatRadioModule,   
     NgxSpinnerModule,
     CarouselModule,
-    
+    CommonModule,
      MatStepperModule,
     // ShareButtonsModule.withConfig({
     //   debug: true
