@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 import { HomeComponent } from './Feature/home/home.component';
-// import { from } from 'rxjs';
+import { from } from 'rxjs';
 import { AboutUsComponent } from './Feature/about-us/about-us.component';
 import { OurCampaignsComponent } from './Feature/our-campaigns/our-campaigns.component';
 import { FundRaiserComponent } from './Feature/fund-raiser/fund-raiser.component';
@@ -15,7 +15,7 @@ import { ContactUsComponent } from './Feature/contact-us/contact-us.component';
 import { SignUpComponent } from './Feature/sign-up/sign-up.component';
 import { VolunteerComponent } from './Feature/volunteer/volunteer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ProfileComponent } from './Feature/profile/profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -51,7 +51,7 @@ import { PaytmComponent } from './Feature/paytm/paytm.component';
 import { PaytmPaymentComponent } from './Feature/paytm-payment/paytm-payment.component';
 import { DonateUserComponent } from './donate-user/donate-user.component';
 import { DemoComponent } from './demo/demo.component';
-// import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -93,11 +93,12 @@ import { CommonModule } from '@angular/common';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    from,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
     MatStepperModule,
-    // NgxIntlTelInputModule,
+    NgxIntlTelInputModule,
     NgxPaginationModule,
     MatStepperModule,
     MatFormFieldModule,
@@ -111,11 +112,11 @@ import { CommonModule } from '@angular/common';
     CarouselModule,
     CommonModule,
      MatStepperModule,
-    // ShareButtonsModule.withConfig({
-    //   debug: true
+    //  ShareButtonsModule.withConfig({
+    //   debug: true // Optional: Enable debugging
     // }),
-    // ShareIconsModule,
-    // // PaginationControlsComponent,
+    ShareIconsModule,
+    // PaginationControlsComponent,
     BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
     NgxSlickJsModule.forRoot({
